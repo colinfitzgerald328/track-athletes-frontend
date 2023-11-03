@@ -3,9 +3,9 @@ import styles from './styles.module.css';
 
 export default function AthleteResults(props) {
     const { athlete } = props;
-    const resultsMap = athlete.map((result) => {
+    const resultsMap = athlete.map((result, index) => {
         return (
-            <div className={styles.singleResult}>
+            <div key={index} className={styles.singleResult}>
                 <div className={styles.tableHeaderLabelSmall}>
                     {result.mark}
                 </div>
