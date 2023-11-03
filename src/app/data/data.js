@@ -1,4 +1,4 @@
-const athletesData = [
+const data = [
     {
       aaAthleteId: "14679502",
       familyName: "DUPLANTIS",
@@ -379,3 +379,5 @@ const athletesData = [
         "Sifan Hassan is an Ethiopian-born Dutch middle- and long-distance runner known for her exceptional versatility and world-leading performances in various distances. She made history at the 2020 Tokyo Olympics by winning gold medals in the 5000 meters and 10,000 meters, as well as a bronze medal in the 1500 meters. Hassan is the only athlete to achieve medals in both middle-distance and long-distance events at a single Olympic Games and the second woman to complete an Olympic distance double. She has also achieved remarkable feats outside of the Olympics, including winning titles at the World Athletics Championships in 2019 and earning numerous medals at the World Indoor Championships and European Championships. Hassan has set multiple world records, including the one-hour run, the one-mile on the track, and a 5 km road race. She holds numerous European and Dutch records. Born in Ethiopia and arriving in the Netherlands as a refugee, Hassan became a Dutch citizen in 2013. She began running while studying to become a nurse and quickly rose to prominence with breakthrough performances in the 2013 season. Since then, she has consistently achieved personal best times and gained recognition in the world of athletics. Hassan has been coached by notable figures such as Honore Hoedt, Alberto Salazar (who received a four-year ban for doping violations), and currently trains under Tim Rowberry. In addition to her sporting achievements, Hassan maintains a strong presence on social media, engaging with her followers and sharing updates about her experiences.",
     },
   ];
+
+export default data; 

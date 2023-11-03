@@ -6,7 +6,7 @@ export default function AthleteResults(props) {
     const resultsMap = athlete.map((result, index) => {
         return (
             <div key={index} className={styles.singleResult}>
-                <div className={styles.tableHeaderLabelSmall}>
+                <div className={styles.tableHeaderLabelSmallBold}>
                     {result.mark}
                 </div>
                 <div className={styles.tableHeaderLabelSmall}>
@@ -15,7 +15,7 @@ export default function AthleteResults(props) {
                 <div className={styles.tableHeaderLabelLarge}>
                     {result.venue}
                 </div>
-                <div className={styles.tableHeaderLabelSmall}>
+                <div className={styles.tableHeaderLabelSmallDate}>
                     {result.date}
                 </div>
             </div>
@@ -28,7 +28,7 @@ export default function AthleteResults(props) {
                 [Latest Results]
             </div>
             <div className={styles.tableHeaderLabels}>
-                <div className={styles.tableHeaderLabelSmall}>
+                <div className={styles.tableHeaderLabelSmallLabel}>
                     Time
                 </div>
                 <div className={styles.tableHeaderLabelSmall}>
