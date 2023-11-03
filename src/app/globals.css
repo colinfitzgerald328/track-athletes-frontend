@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin&family=DM+Sans:opsz@9..40&family=Inter:wght@300;400&family=JetBrains+Mono&family=Roboto+Mono:wght@300&family=Roboto:wght@300;400&family=Sometype+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin&family=DM+Sans:opsz@9..40&family=Inter:wght@300;400&family=JetBrains+Mono&family=Roboto+Mono:wght@300&family=Roboto:wght@300;400&family=Sometype+Mono&display=swap");
 
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'JetBrains Mono', monospace;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

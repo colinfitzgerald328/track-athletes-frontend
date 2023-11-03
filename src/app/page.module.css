@@ -1,8 +1,8 @@
 .main {
   width: 100vw;
   height: 100vh;
-  background-color: rgb(17, 60, 121);
-  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  font-family: 'JetBrains Mono', monospace;
 }

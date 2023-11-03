@@ -1,11 +1,15 @@
-import Image from 'next/image'
-import AthleteList from './AthleteList'
-import styles from './page.module.css'
+"use client";
+import Image from "next/image";
+import styles from "./page.module.css";
+import MainComponent from "./components";
+import { NextUIProvider } from "@nextui-org/react";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <AthleteList/>
-    </main>
-  )
+    <NextUIProvider>
+      <main className={styles.main}>
+        <MainComponent />
+      </main>
+    </NextUIProvider>
+  );
 }
