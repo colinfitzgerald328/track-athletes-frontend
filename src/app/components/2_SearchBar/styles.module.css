@@ -94,6 +94,10 @@
   cursor: pointer;
 }
 
+.noBorderBottom {
+  border-bottom: none;
+}
+
 .athleteImage {
   width: 100px;
   height: 50px;

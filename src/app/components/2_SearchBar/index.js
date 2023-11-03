@@ -64,10 +64,10 @@ export default function SearchBar(props) {
     setSearchResults([]);
   }
 
-  const searchResultsMap = searchResults.map((athlete) => (
+  const searchResultsMap = searchResults.map((athlete, index) => (
     <div
     onClick={() => handleChooseAthlete(athlete)}
-    className={styles.singleResult}
+    className={`${styles.singleResult} ${index === searchResults.length - 1 ? styles.noBorderBottom : ''}`}
     key={athlete.id}
     >
       <div className={styles.singleResultImage}>
