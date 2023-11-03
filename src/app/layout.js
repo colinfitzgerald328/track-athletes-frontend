@@ -1,4 +1,4 @@
-import { GeistSans, GeistMono } from 'geist/font'
+import { GeistSans, GeistMono } from "geist/font";
 import Head from "next/head";
 import "./globals.css";
 
@@ -17,6 +17,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
-
-
