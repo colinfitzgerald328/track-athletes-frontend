@@ -7,6 +7,30 @@ export default function SearchBar(props) {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
+  const searchResultsRef = React.useRef();
+  const searchBarRef = React.useRef();
+
+  useEffect(() => {
+    const handleDocumentClick = (event) => {
+      if (
+        searchBarRef.current &&
+        !searchBarRef.current.contains(event.target) &&
+        searchResultsRef.current &&
+        !searchResultsRef.current.contains(event.target)
+      ) {
+        // Click occurred outside of the search bar and search results, clear the search results.
+        setSearchResults([]);
+      }
+    };
+
+    document.addEventListener("click", handleDocumentClick);
+
+    return () => {
+      // Clean up the event listener when the component unmounts.
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, []);
+
   function getSearchResults(searchTerm) {
     if (searchTerm.length === 0) {
       setSearchResults([]);
@@ -18,6 +42,18 @@ export default function SearchBar(props) {
     setSearchResults(results);
   }
 
+  function getSearchResults(searchTerm) {
+    if (searchTerm.length === 0) {
+      setSearchResults([]);
+      return;
+    }
+    const results = data.filter((athlete) => {
+      return athlete.full_name.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    setSearchResults(results);
+
+  }
+
   useEffect(() => {
     getSearchResults(searchTerm);
   }, [searchTerm]);
@@ -25,6 +61,7 @@ export default function SearchBar(props) {
   function handleChooseAthlete(athlete) {
     props.setAthlete(athlete);
     setSearchTerm("");
+    setSearchResults([]);
   }
 
   const searchResultsMap = searchResults.map((athlete) => (
@@ -49,7 +86,9 @@ export default function SearchBar(props) {
   ));
 
   return (
-    <div className={styles.searchBarPositioner}>
+    <div
+    ref={searchBarRef}
+    className={styles.searchBarPositioner}>
       <div className={styles.inputContainer}>
         <SearchIcon
           src="your-image.jpg" // You should set the correct image source
@@ -63,10 +102,13 @@ export default function SearchBar(props) {
           placeholder="Search for an athlete..."
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
+          onMouseDown={(event) => setSearchResults(data)}
         />
       </div>
       {searchResults.length > 0 && (
-        <div className={styles.searchResults}>
+        <div
+        ref={searchResultsRef}
+        className={styles.searchResults}>
           {searchResultsMap}
         </div>
       )}
