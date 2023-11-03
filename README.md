@@ -6,5 +6,6 @@
 - Summaries created using instagram and wikipedia profiles, then run through generative language models to create readable and well-written summaries
 - A stream to view the athlete's latest results
 - Social media profile links
+- Credit to Instagram, Wikipedia and WorldAthletics for Data
 
 - Tech stack: NoSQL, MongoDB, Python Flask Server, Next.js/Vercel for hosting
