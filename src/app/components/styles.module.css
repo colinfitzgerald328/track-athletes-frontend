@@ -24,6 +24,7 @@
     filter: drop-shadow(-30px 20px 10px #795ECE);
     z-index: 1;
     position: relative;
+    border: 2px solid #272279;
 }
 
 .mainText {
@@ -36,6 +37,7 @@
     z-index: 0;
     padding: 10px; 
     border-radius: 40px;
+    border: 2px solid #272279;
 }
 
 .mainTitle {
@@ -55,7 +57,7 @@
 .mainSummary {
     margin-left: 100px;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
     padding: 20px;
     width: fit-content;
     border-radius: 20px;
@@ -64,8 +66,11 @@
     max-height: 450px;
     line-height: normal;
     margin-top: 10px;
+    margin-bottom: 10px;
     margin-right: 10px;
-    background-color: #2D3BEB;
+    padding-bottom: 10px;
+    background-color: #3b4086;
+    border: 2px solid #a39fff   ;
 }
 
 .container {
@@ -92,6 +97,7 @@
 .openLink:hover {
     background-color: #FFACE8;
     color: #5B6CF9;
+    transition: 0.5s;
 }
 
 .mainEvents {
