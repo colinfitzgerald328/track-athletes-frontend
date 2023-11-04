@@ -68,7 +68,7 @@
   border-radius: 20px;
   color: white;
   overflow-y: scroll;
-  max-height: 450px;
+  height: calc(100% - 120px);
   line-height: normal;
   margin-top: 10px;
   margin-bottom: 10px;
