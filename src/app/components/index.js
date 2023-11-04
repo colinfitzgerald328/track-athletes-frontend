@@ -95,7 +95,10 @@ export default class MainComponent extends React.Component {
               dangerouslySetInnerHTML={{ __html: formattedText }}
             />
           </div>
-          <AthleteResults athlete={this.state.athlete_data} />
+          <AthleteResults
+          athlete={this.state.athlete_data}
+          viewingAthlete={this.state.athlete}
+          />
         </div>
       </div>
     );
