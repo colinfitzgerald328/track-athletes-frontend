@@ -4,7 +4,10 @@ import styles from "./styles.module.css";
 export default function AthleteResults(props) {
   const [athlete, setAthlete] = useState([]);
   const { viewingAthlete } = props;
-  const isFieldAthlete = viewingAthlete.disciplines.includes("Pole Vault") || viewingAthlete.disciplines.includes("Long Jump") || viewingAthlete.disciplines.includes("High Jump") || viewingAthlete.disciplines.includes("Triple Jump") || viewingAthlete.disciplines.includes("Shot Put") || viewingAthlete.disciplines.includes("Discus") || viewingAthlete.disciplines.includes("Hammer") || viewingAthlete.disciplines.includes("Javelin");
+  const firstDiscipline = viewingAthlete.disciplines.split(',')[0].trim();
+  const isFieldAthlete = ["Pole Vault", "Long Jump", "High Jump", "Triple Jump", "Shot Put", "Discus", "Hammer", "Javelin"].includes(firstDiscipline);
+
+
 
   useEffect(() => {
     setAthlete([]);

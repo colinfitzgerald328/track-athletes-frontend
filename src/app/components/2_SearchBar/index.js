@@ -74,8 +74,10 @@ export default function SearchBar(props) {
       </div>
       <div className={styles.singleResultText}>
         <div className={styles.singleResultName}>{athlete.full_name}</div>
-        <div className={styles.singleResultCountry}>{athlete.country}</div>
-        <div className={styles.singleResultCountry}>{athlete.disciplines}</div>
+        <div className={styles.singleResultCountry}>
+          {(athlete.country)}
+          </div>
+        <div className={styles.singleResultDiscipline}>{athlete.disciplines}</div>
       </div>
     </div>
   ));
