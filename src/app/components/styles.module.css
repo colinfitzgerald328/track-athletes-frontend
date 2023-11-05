@@ -123,6 +123,11 @@
   margin-left: 5px;
 }
 
+.image:hover {
+  transition: 0.5s;
+  cursor: pointer;
+}
+
 .socialIconHolder {
   display: flex;
   justify-content: flex-end;
