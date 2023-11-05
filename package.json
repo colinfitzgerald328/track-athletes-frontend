@@ -18,9 +18,7 @@
     "geist": "^1.0.0",
     "next": "^14.0.0",
     "react": "^18",
-    "react-dom": "^18",
-    "react-flagpack": "^1.2.0",
-    "react-flags": "^0.1.18"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
