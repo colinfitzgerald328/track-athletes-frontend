@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import data from "src/app/data/data.js";
+import * as API from "src/app/api/api.js";
 import styles from "./styles.module.css";
 
 export default function SearchBar(props) {
@@ -31,28 +31,23 @@ export default function SearchBar(props) {
     };
   }, []);
 
-  function getSearchResults(searchTerm) {
-    if (searchTerm.length === 0) {
-      setSearchResults([]);
-      return;
-    }
-    const results = data.filter((athlete) => {
-      return athlete.full_name.toLowerCase().includes(searchTerm.toLowerCase());
-    });
-    setSearchResults(results);
-  }
 
   function getSearchResults(searchTerm) {
     if (searchTerm.length === 0) {
       setSearchResults([]);
       return;
     }
-    const results = data.filter((athlete) => {
-      return athlete.full_name.toLowerCase().includes(searchTerm.toLowerCase());
+    API.getSearchResultsForQuery(searchTerm, (data) => {
+      setSearchResults(data.search_results);
     });
-    setSearchResults(results);
-
   }
+
+  function getAndSetTop20Results() {
+    API.getTopRecords((data) => {
+      setSearchResults(data.records);
+    });
+  }
+
 
   useEffect(() => {
     getSearchResults(searchTerm);
@@ -102,7 +97,7 @@ export default function SearchBar(props) {
           placeholder="Search for an athlete..."
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
-          onMouseDown={(event) => setSearchResults(data)}
+          onMouseDown={() => getAndSetTop20Results()}
         />
       </div>
       {searchResults.length > 0 && (

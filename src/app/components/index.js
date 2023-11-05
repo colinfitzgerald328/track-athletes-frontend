@@ -2,14 +2,13 @@ import React from "react";
 import * as API from "src/app/api/api.js";
 import AthleteResults from "./1_AthleteResults";
 import SearchBar from "./2_SearchBar";
-import data from "src/app/data/data.js";
 import styles from "./styles.module.css";
 
 export default class MainComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      athlete: data[17],
+      athlete: [],
       athlete_data: [],
     };
   }
@@ -24,7 +23,8 @@ export default class MainComponent extends React.Component {
   }
 
   componentDidMount() {
-    this.getResultsForAthlete(this.state.athlete.aaAthleteId);
+    this.fetchRandomAthlete();
+    // this.getResultsForAthlete(this.state.athlete.aaAthleteId);
   }
 
   setAthlete(athlete) {
@@ -34,23 +34,38 @@ export default class MainComponent extends React.Component {
     this.getResultsForAthlete(athlete.aaAthleteId);
   }
 
-  render() {
-    function separateSentencesIntoParagraphs(text) {
-      // Split the text into sentences using regular expressions.
-      const sentences = text.split(/(?<=[.!?])\s+/);
+  fetchRandomAthlete() {
+    API.getRandomDoc((athlete) => {
+      console.log(athlete)
+      this.setState({
+        athlete: athlete.random_doc,
+      });
+      this.getResultsForAthlete(athlete.random_doc.aaAthleteId);
+    });
+  }
 
-      // Join the sentences to create separate paragraphs.
-      const paragraphs = sentences.map(
-        (sentence) =>
-          `<p style="margin-bottom: 10px; margin-right: 10px;">${sentence}</p>`,
-      );
-
-      // Join the paragraphs to create the final result.
-      return paragraphs.join("\n");
+  separateSentencesIntoParagraphs(text) {
+    if (!text) {
+      return "";
     }
-    const formattedText = separateSentencesIntoParagraphs(
-      this.state.athlete.summary,
+    // Split the text into sentences using regular expressions.
+    const sentences = text.split(/(?<=[.!?])\s+/);
+
+    // Join the sentences to create separate paragraphs.
+    const paragraphs = sentences.map(
+      (sentence) =>
+        `<p style="margin-bottom: 10px; margin-right: 10px;">${sentence}</p>`,
     );
+
+    // Join the paragraphs to create the final result.
+    return paragraphs.join("\n");
+  }
+
+  render() {
+
+    if (this.state.athlete.length === 0) {
+      return <div>Loading...</div>;
+    } else if (this.state.athlete) {
     return (
       <div className={styles.main}>
         <div className={styles.mainBackground}>
@@ -92,7 +107,7 @@ export default class MainComponent extends React.Component {
             </div>
             <div
               className={styles.mainSummary}
-              dangerouslySetInnerHTML={{ __html: formattedText }}
+              dangerouslySetInnerHTML={{ __html: this.separateSentencesIntoParagraphs(this.state.athlete.summary) }}
             />
           </div>
           <AthleteResults
@@ -103,4 +118,5 @@ export default class MainComponent extends React.Component {
       </div>
     );
   }
+}
 }

@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 
 export default function AthleteResults(props) {
-  const { athlete } = props;
+  const [athlete, setAthlete] = useState([]);
   const { viewingAthlete } = props;
   const isFieldAthlete = viewingAthlete.disciplines.includes("Pole Vault") || viewingAthlete.disciplines.includes("Long Jump") || viewingAthlete.disciplines.includes("High Jump") || viewingAthlete.disciplines.includes("Triple Jump") || viewingAthlete.disciplines.includes("Shot Put") || viewingAthlete.disciplines.includes("Discus") || viewingAthlete.disciplines.includes("Hammer") || viewingAthlete.disciplines.includes("Javelin");
+
+  useEffect(() => {
+    setAthlete([]);
+    setAthlete(props.athlete);
+  }, [props.athlete]);
+
+
   const resultsMap = athlete.map((result, index) => {
     return (
       <div key={index} className={styles.singleResult}>

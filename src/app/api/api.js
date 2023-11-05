@@ -7,7 +7,7 @@ export async function getResultsForAthlete(athlete_code, callback) {
 
   // hello world
 
-  var url = new URL(API_URL + "/query/athletes");
+  var url = new URL(API_URL + "/athletes/results");
   url.search = new URLSearchParams(data).toString();
   fetch(url)
     .then((response) => {
@@ -25,3 +25,74 @@ export async function getResultsForAthlete(athlete_code, callback) {
       // toaster.danger("API Error on getting notifications");
     });
 }
+
+
+export async function getSearchResultsForQuery(search, callback) {
+  var data = {
+    search_term: search,
+  };
+
+  // hello world
+
+  var url = new URL(API_URL + "/query/results");
+  url.search = new URLSearchParams(data).toString();
+  fetch(url)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Something went wrong ...");
+      }
+    })
+    .then((data) => {
+      // TODO Fill in Data
+      callback(data);
+    })
+    .catch((error) => {
+      // toaster.danger("API Error on getting notifications");
+    });
+}
+
+
+export async function getRandomDoc(callback) {
+  var url = new URL(API_URL + "/query/random");
+  url.search = new URLSearchParams().toString();
+  fetch(url)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Something went wrong ...");
+      }
+    })
+    .then((data) => {
+      // TODO Fill in Data
+      callback(data);
+    })
+    .catch((error) => {
+      // toaster.danger("API Error on getting notifications");
+    });
+}
+
+
+export async function getTopRecords(callback) {
+  var url = new URL(API_URL + "/query/top");
+  url.search = new URLSearchParams().toString();
+  fetch(url)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Something went wrong ...");
+      }
+    })
+    .then((data) => {
+      // TODO Fill in Data
+      callback(data);
+    })
+    .catch((error) => {
+      // toaster.danger("API Error on getting notifications");
+    });
+}
+
+///query/top
