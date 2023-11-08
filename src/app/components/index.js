@@ -53,8 +53,8 @@ export default class MainComponent extends React.Component {
 
     // Join the sentences to create separate paragraphs.
     const paragraphs = sentences.map(
-      (sentence) =>
-        <p className={styles.sentence}>{sentence}</p>,
+      (sentence, index) =>
+        <p key={index} className={styles.sentence}>{sentence}</p>,
     );
 
     // Join the paragraphs to create the final result.
