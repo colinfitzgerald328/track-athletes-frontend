@@ -35,7 +35,7 @@ export default function AthleteResults(props) {
   });
   return (
     <div className={styles.tableHolder}>
-      <div className={styles.tableHeader}>[Latest Results]</div>
+      <div className={styles.tableHeader}>Latest Results</div>
       <div className={styles.tableHeaderLabels}>
         <div className={styles.tableHeaderLabelSmallLabel}>
           {isFieldAthlete ? "Mark" : "Time"}

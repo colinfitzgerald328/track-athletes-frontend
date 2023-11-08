@@ -54,16 +54,15 @@ export default class MainComponent extends React.Component {
     // Join the sentences to create separate paragraphs.
     const paragraphs = sentences.map(
       (sentence) =>
-        `<p style="margin-bottom: 10px; margin-right: 10px;">${sentence}</p>`,
+        <p className={styles.sentence}>{sentence}</p>,
     );
 
     // Join the paragraphs to create the final result.
-    return paragraphs.join("\n");
+    return paragraphs
   }
 
   normalizeName(name) {
     const nameParts = name.toLowerCase().split(" ");
-    console.log(nameParts);
     const normalizedParts = nameParts.map((part) => {
       return part.charAt(0).toUpperCase() + part.slice(1);
     });
@@ -116,14 +115,14 @@ export default class MainComponent extends React.Component {
                 </div>
               </div>
               <div className={styles.mainSummary}>
-                <div
-                  className={styles.summary}
-                  dangerouslySetInnerHTML={{
-                    __html: this.separateSentencesIntoParagraphs(
-                      this.state.athlete.summary,
-                    ),
-                  }}
-                ></div>
+                <div className={styles.leftItemsHolder}>
+                <div className={styles.summaryLabel}>
+                  About 
+                </div>
+                <div className={styles.summary}>
+                  {this.separateSentencesIntoParagraphs(this.state.athlete.summary)}
+                </div>
+                </div>
                 <div className={styles.closestCompetitors}>
                   <div className={styles.label}>
                     Closest Competitors
