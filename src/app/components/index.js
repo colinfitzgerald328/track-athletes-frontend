@@ -13,6 +13,7 @@ export default class MainComponent extends React.Component {
     this.state = {
       athlete: [],
       athlete_data: [],
+      athlete_pbs: [],
     };
   }
 
@@ -21,6 +22,14 @@ export default class MainComponent extends React.Component {
       console.log(results);
       this.setState({
         athlete_data: results["athlete_data"],
+      });
+    });
+  }
+
+  getPBSForAthlete(athlete_id) {
+    API.getPBSForAthlete(athlete_id, (data) => {
+      this.setState({
+        athlete_pbs: data["personal_bests"],
       });
     });
   }
@@ -35,6 +44,7 @@ export default class MainComponent extends React.Component {
       athlete: athlete,
     });
     this.getResultsForAthlete(athlete.aaAthleteId);
+    this.getPBSForAthlete(athlete.aaAthleteId);
   }
 
   fetchRandomAthlete() {
@@ -44,6 +54,7 @@ export default class MainComponent extends React.Component {
         athlete: athlete.random_doc,
       });
       this.getResultsForAthlete(athlete.random_doc.aaAthleteId);
+      this.getPBSForAthlete(athlete.random_doc.aaAthleteId);
     });
   }
 
@@ -73,6 +84,7 @@ export default class MainComponent extends React.Component {
   }
 
   render() {
+    console.log(this.state.athlete_pbs)
     if (this.state.athlete.length === 0) {
       return <div>Loading...</div>;
     } else if (this.state.athlete) {
@@ -129,6 +141,7 @@ export default class MainComponent extends React.Component {
                   {this.separateSentencesIntoParagraphs(this.state.athlete.summary)}
                 </div>
                 </div>
+                <div className={styles.rightItemsHolder}>
                 <div className={styles.closestCompetitors}>
                   <div className={styles.label}>
                     <LocalFireDepartmentIcon
@@ -145,6 +158,22 @@ export default class MainComponent extends React.Component {
                       ),
                     )}
                   </div>
+                </div>
+                <div className={styles.closestCompetitors}>
+                  <div className={styles.label}>PERSONAL BESTS
+                  </div>
+                  <div className={styles.competitors}>
+                  {this.state.athlete_pbs.map(
+                      (data, index) => (
+                        <div
+                        key={index}
+                        className={styles.competitor}>
+                          {data.discipline} - {data.result}
+                        </div>
+                      ),
+                    )}
+                  </div>
+                </div>
                 </div>
               </div>
             </div>

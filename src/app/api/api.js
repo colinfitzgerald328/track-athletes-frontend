@@ -92,4 +92,31 @@ export async function getTopRecords(callback) {
     });
 }
 
+
+export async function getPBSForAthlete(athlete_code, callback) {
+  var data = {
+    athlete_id: athlete_code,
+  };
+
+  // hello world
+
+  var url = new URL(API_URL + "/athlete/pbs");
+  url.search = new URLSearchParams(data).toString();
+  fetch(url)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Something went wrong ...");
+      }
+    })
+    .then((data) => {
+      // TODO Fill in Data
+      callback(data);
+    })
+    .catch((error) => {
+      // toaster.danger("API Error on getting notifications");
+    });
+}
+
 ///query/top
