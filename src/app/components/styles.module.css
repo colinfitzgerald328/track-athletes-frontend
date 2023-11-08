@@ -7,7 +7,7 @@
   align-items: center;
   max-width: 1800px;
   overflow-x: hidden;
-  background-color: #1264DB;
+  background-color: #59252E;
 }
 
 .pageLabel {
@@ -24,7 +24,7 @@
   height: 90%;
   width: 90%;
   border-radius: 40px;
-  background-color: #7D5CE6;
+  background-color: #325573;
   position: relative;
   overflow-x: hidden;
 }
@@ -36,13 +36,11 @@
 
 .athleteImage {
   border-radius: 40px;
-  filter: drop-shadow(-10px 10px 5px #5b6cf9);
   z-index: 1;
   position: relative;
 }
 
 .mainText {
-  background: linear-gradient(#7480F7, #d96b3468);
   width: calc(100% - 650px);
   height: calc(100% - 200px);
   position: absolute;
@@ -52,6 +50,7 @@
   padding: 10px;
   border-radius: 40px;
   overflow-x: hidden;
+  background-color: #59252E;
 }
 
 .mainTitle {
@@ -63,8 +62,8 @@
   padding-right: 15px;
   width: fit-content;
   border-radius: 20px;
-  color: #5A5AC4;
-  background-color: #C0F78D;
+  color: #59252E; 
+  background-color: #F2C288;
   line-height: normal;
   min-width: 300px;
 }
@@ -85,14 +84,15 @@
 
 .leftItemsHolder {
   border-radius: 20px;
-  background-color: #D96A34;
-  filter: drop-shadow(10px 10px 10px #D96A34);
+  background-color: #325573;
+  border: 1px #F2C288;
 }
 
 .summaryLabel {
   font-size: 20px;
   font-weight: bold;
-  background-color: #D99F34;
+    background-color: #F2C288;
+  color: #325573;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   padding: 10px 10px 10px 20px;
@@ -114,7 +114,7 @@
 }
 
 .closestCompetitors {
-  background-color: #D94D34;
+  background-color: #325573;
   height: 100%;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -133,7 +133,8 @@
 .label {
   font-size: 20px;
   font-weight: bold;
-  background-color: #D9B234;
+  background-color: #F2C288;
+  color: #325573;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   min-width: 250px;
@@ -149,7 +150,7 @@
 
 .openLink {
   color: white;
-  border: 1px solid #fface8;
+  border: 1px solid white;
   border-radius: 40px;
   padding-left: 15px;
   padding-right: 15px;
@@ -195,3 +196,26 @@
   justify-content: flex-end;
   margin-top: 10px;
 }
+
+
+/* Color Theme Swatches in Hex */
+.Wilderness-1-hex { color: #59252E; }
+.Wilderness-2-hex { color: #325573; }
+.Wilderness-3-hex { color: #F28F16; }
+.Wilderness-4-hex { color: #F2C288; }
+.Wilderness-5-hex { color: #D95204; }
+
+/* Color Theme Swatches in RGBA */
+.Wilderness-1-rgba { color: rgba(89, 36, 46, 1); }
+.Wilderness-2-rgba { color: rgba(50, 84, 114, 1); }
+.Wilderness-3-rgba { color: rgba(242, 143, 21, 1); }
+.Wilderness-4-rgba { color: rgba(242, 194, 135, 1); }
+.Wilderness-5-rgba { color: rgba(216, 82, 4, 1); }
+
+/* Color Theme Swatches in HSLA */
+.Wilderness-1-hsla { color: hsla(348, 41, 24, 1); }
+.Wilderness-2-hsla { color: hsla(208, 38, 32, 1); }
+.Wilderness-3-hsla { color: hsla(33, 89, 51, 1); }
+.Wilderness-4-hsla { color: hsla(33, 80, 74, 1); }
+.Wilderness-5-hsla { color: hsla(22, 96, 43, 1); }
+

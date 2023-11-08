@@ -3,6 +3,7 @@ import * as API from "src/app/api/api.js";
 import AthleteResults from "./1_AthleteResults";
 import SearchBar from "./2_SearchBar";
 import FlashOnIcon from '@mui/icons-material/FlashOn';
+import AttachFileIcon from '@mui/icons-material/AttachFile';
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import styles from "./styles.module.css";
 
@@ -78,7 +79,7 @@ export default class MainComponent extends React.Component {
       return (
         <div className={styles.main}>
           <div className={styles.pageLabel}>
-            athletics hub 
+            ah
           </div>
           <div className={styles.mainBackground}>
             <SearchBar
@@ -122,7 +123,7 @@ export default class MainComponent extends React.Component {
               <div className={styles.mainSummary}>
                 <div className={styles.leftItemsHolder}>
                 <div className={styles.summaryLabel}>
-                <FlashOnIcon></FlashOnIcon> SNAPSHOT
+                <AttachFileIcon></AttachFileIcon> SNAPSHOT
                 </div>
                 <div className={styles.summary}>
                   {this.separateSentencesIntoParagraphs(this.state.athlete.summary)}
@@ -131,7 +132,6 @@ export default class MainComponent extends React.Component {
                 <div className={styles.closestCompetitors}>
                   <div className={styles.label}>
                     <LocalFireDepartmentIcon
-                      style={{ color: "#ff0000" }}
                     ></LocalFireDepartmentIcon> COMPETITION
                   </div>
                   <div className={styles.competitors}>
