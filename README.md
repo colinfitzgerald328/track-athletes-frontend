@@ -1,6 +1,10 @@
 ## Athletics Hub
 
-https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/f076a4e9-28d4-483f-899f-ebe6a65938d1
+
+
+https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/75640aeb-68c8-4198-adc1-4dc1b85b940c
+
+
 
 The goal of this project was to build an easily accessible page for track and field fans to follow their favorite athletes. This page was built with the track fan in mind.
 Currently, the project only supports the top 20 men and women track and field athletes based on world rankings from 2023.
@@ -12,6 +16,9 @@ When you search for an athlete, you want to know a couple of things:
 1. What are this athlete's main events?
 2. What are this athlete's most recent results?
 3. What's the backstory of this athlete?
+4. Who are the athlete's top competitors?
+5. What are this athlete's personal bests [in development]
+6. What are this athlete's most notable accomplishments? [in development]
 
 - While this information is available in a google search, myself and others commonly find that the auto-generated summaries from Wikipedia are too short and there is no live results stream available. While the information is available, it is not tailored to a track fan's use case.
 
