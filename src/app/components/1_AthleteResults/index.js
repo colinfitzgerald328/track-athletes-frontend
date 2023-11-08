@@ -36,7 +36,10 @@ export default function AthleteResults(props) {
   });
   return (
     <div className={styles.tableHolder}>
-      <div className={styles.tableHeader}>LATEST RESULTS</div>
+      <div className={styles.tableHeader}>
+        <img src={"https://cdn.icon-icons.com/icons2/2248/PNG/512/clock_fast_icon_137750.png"} className={styles.imageIcon} />
+        LATEST RESULTS
+      </div>
       <div className={styles.tableHeaderLabels}>
         <div className={styles.tableHeaderLabelSmallLabel}>
           {isFieldAthlete ? "Mark" : "Time"}

@@ -77,6 +77,9 @@ export default class MainComponent extends React.Component {
     } else if (this.state.athlete) {
       return (
         <div className={styles.main}>
+          <div className={styles.pageLabel}>
+            athletics hub 
+          </div>
           <div className={styles.mainBackground}>
             <SearchBar
               setAthlete={this.setAthlete.bind(this)}
@@ -127,7 +130,9 @@ export default class MainComponent extends React.Component {
                 </div>
                 <div className={styles.closestCompetitors}>
                   <div className={styles.label}>
-                    <LocalFireDepartmentIcon></LocalFireDepartmentIcon> COMPETITION
+                    <LocalFireDepartmentIcon
+                      style={{ color: "#ff0000" }}
+                    ></LocalFireDepartmentIcon> COMPETITION
                   </div>
                   <div className={styles.competitors}>
                   {this.state.athlete.top_competitors.map(

@@ -2,17 +2,29 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 50px;
   align-items: center;
   max-width: 1800px;
   overflow-x: hidden;
+  background-color: #1264DB;
+}
+
+.pageLabel {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  width: 90%;
+  color: #6AC2E6;
+  border-radius: 30px;
+  padding: 20px;
 }
 
 .mainBackground {
   height: 90%;
   width: 90%;
   border-radius: 40px;
-  background-color: #c1a4ff;
+  background-color: #7D5CE6;
   position: relative;
   overflow-x: hidden;
 }
@@ -24,14 +36,13 @@
 
 .athleteImage {
   border-radius: 40px;
-  filter: drop-shadow(-30px 20px 10px #795ece);
+  filter: drop-shadow(-10px 10px 5px #5b6cf9);
   z-index: 1;
   position: relative;
-  border: 2px solid #272279;
 }
 
 .mainText {
-  background: linear-gradient(#5b6cf9, #7c60d1);
+  background: linear-gradient(#7480F7, #d96b3468);
   width: calc(100% - 650px);
   height: calc(100% - 200px);
   position: absolute;
@@ -52,8 +63,8 @@
   padding-right: 15px;
   width: fit-content;
   border-radius: 20px;
-  color: white;
-  border: 2px solid #fface8;
+  color: #5A5AC4;
+  background-color: #C0F78D;
   line-height: normal;
   min-width: 300px;
 }
@@ -74,16 +85,14 @@
 
 .leftItemsHolder {
   border-radius: 20px;
-  background-color: #282866;
-  filter: drop-shadow(10px 10px 10px #583ea5);
+  background-color: #D96A34;
+  filter: drop-shadow(10px 10px 10px #D96A34);
 }
 
 .summaryLabel {
   font-size: 20px;
   font-weight: bold;
-  font-size: 20px;
-  font-weight: bold;
-  background-color: #775DCB;
+  background-color: #D99F34;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   padding: 10px 10px 10px 20px;
@@ -105,7 +114,7 @@
 }
 
 .closestCompetitors {
-  background-color: #282866;
+  background-color: #D94D34;
   height: 100%;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -124,7 +133,7 @@
 .label {
   font-size: 20px;
   font-weight: bold;
-  background-color: #775DCB;
+  background-color: #D9B234;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   min-width: 250px;
