@@ -14,6 +14,7 @@ export default class MainComponent extends React.Component {
       athlete: [],
       athlete_data: [],
       athlete_pbs: [],
+      athlete_accolades: [],
     };
   }
 
@@ -34,6 +35,15 @@ export default class MainComponent extends React.Component {
     });
   }
 
+  getAccoladesForAthlete(url_slug) {
+    API.getAccoladesForAthlete(url_slug, (data) => {
+      this.setState({
+        athlete_accolades: data["accolades"],
+      });
+    }
+    );
+  }
+
   componentDidMount() {
     this.fetchRandomAthlete();
     // this.getResultsForAthlete(this.state.athlete.aaAthleteId);
@@ -45,6 +55,7 @@ export default class MainComponent extends React.Component {
     });
     this.getResultsForAthlete(athlete.aaAthleteId);
     this.getPBSForAthlete(athlete.aaAthleteId);
+    this.getAccoladesForAthlete(athlete.urlSlug);
   }
 
   fetchRandomAthlete() {
@@ -55,6 +66,7 @@ export default class MainComponent extends React.Component {
       });
       this.getResultsForAthlete(athlete.random_doc.aaAthleteId);
       this.getPBSForAthlete(athlete.random_doc.aaAthleteId);
+      this.getAccoladesForAthlete(athlete.random_doc.urlSlug);
     });
   }
 
@@ -169,6 +181,21 @@ export default class MainComponent extends React.Component {
                         key={index}
                         className={styles.competitor}>
                           {data.discipline} - {data.result}
+                        </div>
+                      ),
+                    )}
+                  </div>
+                </div>
+                <div className={styles.closestCompetitors}>
+                  <div className={styles.label}>ACCOLADES
+                  </div>
+                  <div className={styles.competitors}>
+                  {this.state.athlete_accolades.map(
+                      (accolade, index) => (
+                        <div
+                        key={index}
+                        className={styles.competitor}>
+                          {accolade}
                         </div>
                       ),
                     )}

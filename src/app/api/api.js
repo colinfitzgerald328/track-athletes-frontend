@@ -119,4 +119,30 @@ export async function getPBSForAthlete(athlete_code, callback) {
     });
 }
 
+export async function getAccoladesForAthlete(url_slug, callback) {
+  var data = {
+    url_slug: url_slug,
+  };
+
+  // hello world
+
+  var url = new URL(API_URL + "/athlete/accolades");
+  url.search = new URLSearchParams(data).toString();
+  fetch(url)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Something went wrong ...");
+      }
+    })
+    .then((data) => {
+      // TODO Fill in Data
+      callback(data);
+    })
+    .catch((error) => {
+      // toaster.danger("API Error on getting notifications");
+    });
+}
+
 ///query/top
