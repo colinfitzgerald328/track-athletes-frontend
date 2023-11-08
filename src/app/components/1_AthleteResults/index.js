@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import styles from "./styles.module.css";
 
 export default function AthleteResults(props) {
@@ -35,7 +36,7 @@ export default function AthleteResults(props) {
   });
   return (
     <div className={styles.tableHolder}>
-      <div className={styles.tableHeader}>Latest Results</div>
+      <div className={styles.tableHeader}>LATEST RESULTS</div>
       <div className={styles.tableHeaderLabels}>
         <div className={styles.tableHeaderLabelSmallLabel}>
           {isFieldAthlete ? "Mark" : "Time"}

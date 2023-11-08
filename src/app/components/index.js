@@ -2,6 +2,8 @@ import React from "react";
 import * as API from "src/app/api/api.js";
 import AthleteResults from "./1_AthleteResults";
 import SearchBar from "./2_SearchBar";
+import FlashOnIcon from '@mui/icons-material/FlashOn';
+import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import styles from "./styles.module.css";
 
 export default class MainComponent extends React.Component {
@@ -101,7 +103,7 @@ export default class MainComponent extends React.Component {
                     }
                     className={styles.openLink}
                   >
-                    Read more
+                    READ MORE
                   </div>
                   <div className={styles.socialIconHolder}>
                     <img
@@ -117,7 +119,7 @@ export default class MainComponent extends React.Component {
               <div className={styles.mainSummary}>
                 <div className={styles.leftItemsHolder}>
                 <div className={styles.summaryLabel}>
-                  About 
+                <FlashOnIcon></FlashOnIcon> SNAPSHOT
                 </div>
                 <div className={styles.summary}>
                   {this.separateSentencesIntoParagraphs(this.state.athlete.summary)}
@@ -125,7 +127,7 @@ export default class MainComponent extends React.Component {
                 </div>
                 <div className={styles.closestCompetitors}>
                   <div className={styles.label}>
-                    Closest Competitors
+                    <LocalFireDepartmentIcon></LocalFireDepartmentIcon> COMPETITION
                   </div>
                   <div className={styles.competitors}>
                   {this.state.athlete.top_competitors.map(

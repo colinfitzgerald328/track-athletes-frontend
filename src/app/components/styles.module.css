@@ -75,6 +75,7 @@
 .leftItemsHolder {
   border-radius: 20px;
   background-color: #282866;
+  filter: drop-shadow(10px 10px 10px #583ea5);
 }
 
 .summaryLabel {
@@ -90,6 +91,8 @@
 
 .summary {
   padding: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
   padding-top: 5px;
   height: calc(100% - 60px);
   overflow-y: scroll;
