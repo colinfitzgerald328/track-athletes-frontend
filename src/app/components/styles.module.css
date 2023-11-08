@@ -69,6 +69,7 @@
   margin-top: 10px;
   margin-right: 10px;
   display: flex;
+  height: calc(100% - 120px);
 }
 
 .leftItemsHolder {
@@ -90,6 +91,8 @@
 .summary {
   padding: 20px;
   padding-top: 5px;
+  height: calc(100% - 60px);
+  overflow-y: scroll;
 }
 
 .sentence {
@@ -103,6 +106,7 @@
   height: 100%;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  height: calc(100% - 20px);
 }
 
 .competitors {
