@@ -79,7 +79,7 @@ export default class MainComponent extends React.Component {
       return (
         <div className={styles.main}>
           <div className={styles.pageLabel}>
-            ah
+            athletics hub
           </div>
           <div className={styles.mainBackground}>
             <SearchBar
@@ -123,7 +123,7 @@ export default class MainComponent extends React.Component {
               <div className={styles.mainSummary}>
                 <div className={styles.leftItemsHolder}>
                 <div className={styles.summaryLabel}>
-                <AttachFileIcon></AttachFileIcon> SNAPSHOT
+                <AttachFileIcon></AttachFileIcon> NOTEBOOK
                 </div>
                 <div className={styles.summary}>
                   {this.separateSentencesIntoParagraphs(this.state.athlete.summary)}

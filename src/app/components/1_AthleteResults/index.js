@@ -22,9 +22,13 @@ export default function AthleteResults(props) {
     setAthlete(props.athlete);
   }, [props.athlete]);
 
+  function isEven(n) {
+    return n % 2 == 0;
+ }
+
   const resultsMap = athlete.map((result, index) => {
     return (
-      <div key={index} className={styles.singleResult}>
+      <div key={index} className={isEven(index) ? styles.singleResult : styles.singleResultDiff}>
         <div className={styles.tableHeaderLabelSmallBold}>
           {isFieldAthlete ? result.mark + "m" : result.mark}
         </div>
@@ -41,12 +45,6 @@ export default function AthleteResults(props) {
         LATEST RESULTS
       </div>
       <div className={styles.tableHeaderLabels}>
-        <div className={styles.tableHeaderLabelSmallLabel}>
-          {isFieldAthlete ? "Mark" : "Time"}
-        </div>
-        <div className={styles.tableHeaderLabelSmall}>Event</div>
-        <div className={styles.tableHeaderLabelLarge}>Location</div>
-        <div className={styles.tableHeaderLabelSmall}>Date</div>
       </div>
       <div className={styles.resultHolder}>{resultsMap}</div>
     </div>

@@ -15,7 +15,7 @@
   height: 50px;
   padding-left: 50px;
   background-color: #59252E;
-  border: 1px solid #F2C288;
+  border: 1px solid #578bb8;
   color: white;
   font-size: 20px;
 }
@@ -30,7 +30,7 @@
   height: 50px;
   padding-left: 50px;
   background-color: #59252E;
-  border: 1px solid #F2C288;
+  border: 1px solid #578bb8;
   color: white;
   font-size: 20px;
   border-bottom-left-radius: 0px;
@@ -92,12 +92,10 @@
   display: flex;
   color: white;
   padding: 10px;
-  border-bottom: 1px solid #F2C288;
 }
 
 .singleResult:hover {
-  background-color: #F2C288;
-  color: #59252E;
+  background-color: #578bb8;
   cursor: pointer;
   transition: 0.5s;
 }

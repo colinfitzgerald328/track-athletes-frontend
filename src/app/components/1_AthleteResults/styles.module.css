@@ -31,7 +31,15 @@
 }
 
 .singleResult {
-  border-bottom: 1px solid #F2C288;
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  color: white;
+  background-color: rgb(187, 110, 110);
+}
+
+.singleResultDiff {
   padding-left: 20px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -61,6 +69,7 @@
 .tableHeaderLabelSmallLabel {
   width: calc(100% / 8);
   margin-right: 10px;
+  color: #578bb8;
 }
 
 .tableHeaderLabelSmallDate {
@@ -74,7 +83,9 @@
 
 .resultHolder {
   overflow-y: scroll;
-  height: calc(100% - 100px);
+  height: calc(100% - 60px);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .resultHolder::-webkit-scrollbar {
