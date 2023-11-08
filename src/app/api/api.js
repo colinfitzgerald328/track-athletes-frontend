@@ -26,7 +26,6 @@ export async function getResultsForAthlete(athlete_code, callback) {
     });
 }
 
-
 export async function getSearchResultsForQuery(search, callback) {
   var data = {
     search_term: search,
@@ -53,7 +52,6 @@ export async function getSearchResultsForQuery(search, callback) {
     });
 }
 
-
 export async function getRandomDoc(callback) {
   var url = new URL(API_URL + "/query/random");
   url.search = new URLSearchParams().toString();
@@ -73,7 +71,6 @@ export async function getRandomDoc(callback) {
       // toaster.danger("API Error on getting notifications");
     });
 }
-
 
 export async function getTopRecords(callback) {
   var url = new URL(API_URL + "/query/top");

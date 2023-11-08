@@ -36,7 +36,7 @@ export default class MainComponent extends React.Component {
 
   fetchRandomAthlete() {
     API.getRandomDoc((athlete) => {
-      console.log(athlete)
+      console.log(athlete);
       this.setState({
         athlete: athlete.random_doc,
       });
@@ -61,62 +61,94 @@ export default class MainComponent extends React.Component {
     return paragraphs.join("\n");
   }
 
-  render() {
+  normalizeName(name) {
+    const nameParts = name.toLowerCase().split(" ");
+    console.log(nameParts);
+    const normalizedParts = nameParts.map((part) => {
+      return part.charAt(0).toUpperCase() + part.slice(1);
+    });
+    return normalizedParts.join(" ");
+  }
 
+  render() {
     if (this.state.athlete.length === 0) {
       return <div>Loading...</div>;
     } else if (this.state.athlete) {
-    return (
-      <div className={styles.main}>
-        <div className={styles.mainBackground}>
-          <SearchBar
-            setAthlete={this.setAthlete.bind(this)}
-            athlete={this.state.athlete}
-          />
-          <div className={styles.mainImage}>
-            <img
-              className={styles.athleteImage}
-              src={this.state.athlete.hq_image_url}
+      return (
+        <div className={styles.main}>
+          <div className={styles.mainBackground}>
+            <SearchBar
+              setAthlete={this.setAthlete.bind(this)}
+              athlete={this.state.athlete}
             />
-          </div>
-          <div className={styles.mainText}>
-            <div className={styles.container}>
-              <div className={styles.mainTitle}>
-                <div>{this.state.athlete.full_name}</div>
-                <div className={styles.mainEvents}>
-                  {this.state.athlete.disciplines}
+            <div className={styles.mainImage}>
+              <img
+                className={styles.athleteImage}
+                src={this.state.athlete.hq_image_url}
+              />
+            </div>
+            <div className={styles.mainText}>
+              <div className={styles.container}>
+                <div className={styles.mainTitle}>
+                  <div>{this.state.athlete.full_name}</div>
+                  <div className={styles.mainEvents}>
+                    {this.state.athlete.disciplines}
+                  </div>
+                </div>
+                <div className={styles.rightContainer}>
+                  <div
+                    onClick={() =>
+                      window.open(this.state.athlete.wikipedia_url)
+                    }
+                    className={styles.openLink}
+                  >
+                    Read more
+                  </div>
+                  <div className={styles.socialIconHolder}>
+                    <img
+                      onClick={() =>
+                        window.open(this.state.athlete.instagram_url)
+                      }
+                      className={styles.image}
+                      src="https://worldathletics.org/static/instagram.svg"
+                    />
+                  </div>
                 </div>
               </div>
-              <div className={styles.rightContainer}>
+              <div className={styles.mainSummary}>
                 <div
-                  onClick={() => window.open(this.state.athlete.wikipedia_url)}
-                  className={styles.openLink}
-                >
-                  Read more
-                </div>
-                <div className={styles.socialIconHolder}>
-                  <img
-                    onClick={() =>
-                      window.open(this.state.athlete.instagram_url)
-                    }
-                    className={styles.image}
-                    src="https://worldathletics.org/static/instagram.svg"
-                  />
+                  className={styles.summary}
+                  dangerouslySetInnerHTML={{
+                    __html: this.separateSentencesIntoParagraphs(
+                      this.state.athlete.summary,
+                    ),
+                  }}
+                ></div>
+                <div className={styles.closestCompetitors}>
+                  <div className={styles.label}>
+                    Closest Competitors
+                  </div>
+                  <div className={styles.competitors}>
+                  {this.state.athlete.top_competitors.map(
+                      (competitor, index) => (
+                        <div
+                        key={index}
+                        className={styles.competitor}>
+                          {index + 1}. {this.normalizeName(competitor)}
+                        </div>
+                      ),
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
-            <div
-              className={styles.mainSummary}
-              dangerouslySetInnerHTML={{ __html: this.separateSentencesIntoParagraphs(this.state.athlete.summary) }}
+            <AthleteResults
+              athlete={this.state.athlete_data}
+              viewingAthlete={this.state.athlete}
             />
           </div>
-          <AthleteResults
-          athlete={this.state.athlete_data}
-          viewingAthlete={this.state.athlete}
-          />
         </div>
-      </div>
-    );
+      );
+    }
   }
-}
 }

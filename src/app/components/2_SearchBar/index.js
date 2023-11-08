@@ -31,7 +31,6 @@ export default function SearchBar(props) {
     };
   }, []);
 
-
   function getSearchResults(searchTerm) {
     if (searchTerm.length === 0) {
       setSearchResults([]);
@@ -48,7 +47,6 @@ export default function SearchBar(props) {
     });
   }
 
-
   useEffect(() => {
     getSearchResults(searchTerm);
   }, [searchTerm]);
@@ -61,9 +59,11 @@ export default function SearchBar(props) {
 
   const searchResultsMap = searchResults.map((athlete, index) => (
     <div
-    onClick={() => handleChooseAthlete(athlete)}
-    className={`${styles.singleResult} ${index === searchResults.length - 1 ? styles.noBorderBottom : ''}`}
-    key={athlete.id}
+      onClick={() => handleChooseAthlete(athlete)}
+      className={`${styles.singleResult} ${
+        index === searchResults.length - 1 ? styles.noBorderBottom : ""
+      }`}
+      key={athlete.id}
     >
       <div className={styles.singleResultImage}>
         <img
@@ -74,18 +74,16 @@ export default function SearchBar(props) {
       </div>
       <div className={styles.singleResultText}>
         <div className={styles.singleResultName}>{athlete.full_name}</div>
-        <div className={styles.singleResultCountry}>
-          {(athlete.country)}
-          </div>
-        <div className={styles.singleResultDiscipline}>{athlete.disciplines}</div>
+        <div className={styles.singleResultCountry}>{athlete.country}</div>
+        <div className={styles.singleResultDiscipline}>
+          {athlete.disciplines}
+        </div>
       </div>
     </div>
   ));
 
   return (
-    <div
-    ref={searchBarRef}
-    className={styles.searchBarPositioner}>
+    <div ref={searchBarRef} className={styles.searchBarPositioner}>
       <div className={styles.inputContainer}>
         <SearchIcon
           src="your-image.jpg" // You should set the correct image source
@@ -95,7 +93,9 @@ export default function SearchBar(props) {
         />
         <input
           type="text"
-          className={searchResults.length > 0 ? styles.searchBarFocus : styles.searchBar}
+          className={
+            searchResults.length > 0 ? styles.searchBarFocus : styles.searchBar
+          }
           placeholder="Search for an athlete..."
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
@@ -103,9 +103,7 @@ export default function SearchBar(props) {
         />
       </div>
       {searchResults.length > 0 && (
-        <div
-        ref={searchResultsRef}
-        className={styles.searchResults}>
+        <div ref={searchResultsRef} className={styles.searchResults}>
           {searchResultsMap}
         </div>
       )}
