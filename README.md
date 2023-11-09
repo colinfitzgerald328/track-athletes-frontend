@@ -1,9 +1,7 @@
 ## Athletics Hub
 
 
-
-https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/75640aeb-68c8-4198-adc1-4dc1b85b940c
-
+https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/a834d9a2-2587-4cf3-ab11-8060179e96f7
 
 
 The goal of this project was to build an easily accessible page for track and field fans to follow their favorite athletes. This page was built with the track fan in mind.
