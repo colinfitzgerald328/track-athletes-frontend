@@ -15,8 +15,8 @@ When you search for an athlete, you want to know a couple of things:
 2. What are this athlete's most recent results?
 3. What's the backstory of this athlete?
 4. Who are the athlete's top competitors?
-5. What are this athlete's personal bests [in development]
-6. What are this athlete's most notable accomplishments? [in development]
+5. What are this athlete's personal bests?
+6. What are this athlete's most notable accomplishments?
 
 - While this information is available in a google search, myself and others commonly find that the auto-generated summaries from Wikipedia are too short and there is no live results stream available. While the information is available, it is not tailored to a track fan's use case.
 
