@@ -23,7 +23,11 @@ When you search for an athlete, you want to know a couple of things:
 
 - This project involves generating descriptive summaries by utilizing data from Instagram and Wikipedia profiles of athletes. The process includes extracting information from these sources and then employing generative language models to generate coherent and well-written summaries.
 
-- Key features of the project include the ability to access a live stream displaying the athlete's most recent results, a summary of the athlete and their accomplishments, as well as links to their social media profiles.
+Key features of the project include:
+-   The ability to access a live stream displaying the athlete's most recent results
+-   A summary of the athlete and their accomplishments
+-   A list of their top 3 competitors
+-   Links to their social media profiles (Instagram done, others in development)
 
 ### Credit
 
