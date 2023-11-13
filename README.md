@@ -3,6 +3,7 @@
 
 https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/a834d9a2-2587-4cf3-ab11-8060179e96f7
 
+### Goal
 
 The goal of this project was to build an easily accessible page for track and field fans to follow their favorite athletes. This page was built with the track fan in mind.
 Currently, the project only supports the top 20 men and women track and field athletes based on world rankings from 2023.
