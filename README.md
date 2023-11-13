@@ -25,7 +25,7 @@ When you search for an athlete, you want to know a couple of things:
 
 Key features of the project include:
 -   The ability to access a live stream displaying the athlete's most recent results
--   A summary of the athlete and their accomplishments
+-   A summary of the athlete and their accomplishments, including personal bests and accolades
 -   A list of their top 3 competitors
 -   Links to their social media profiles (Instagram done, others in development)
 
