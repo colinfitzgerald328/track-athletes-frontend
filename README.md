@@ -19,9 +19,9 @@ When you search for an athlete, you want to know a couple of things:
 5. What are this athlete's personal bests?
 6. What are this athlete's most notable accomplishments?
 
-- While this information is available in a google search, myself and others commonly find that the auto-generated summaries from Wikipedia are too short and there is no live results stream available. While the information is available, it is not tailored to a track fan's use case.
+- While this information is available in a google search, myself and others commonly find that the auto-generated summaries from Wikipedia are too short, there is no live results stream available and that the information is not tailored to a track fan's desires. 
 
-- This project involves generating descriptive summaries by utilizing data from Instagram and Wikipedia profiles of athletes. The process includes extracting information from these sources and then employing generative language models to generate coherent and well-written summaries.
+- This project involves generating descriptive summaries by utilizing data from Instagram and Wikipedia profiles of athletes. The process includes extracting information from these sources and then employing generative language models to generate coherent and well-written summaries. In addition, we collect and propogate data from World Athletics into a visual data display, making it easy and simplistic to stay up to date on your favorite athletes. 
 
 Key features of the project include:
 -   The ability to access a live stream displaying the athlete's most recent results
