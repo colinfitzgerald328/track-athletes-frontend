@@ -32,4 +32,4 @@ Key features of the project include:
 ### Credit
 
 - Credit to Instagram, Wikipedia, and WorldAthletics for providing the data used in supporting this project.
-- The technical stack used for this project includes NoSQL (MongoDB), Flask c/o Replit and Next.js/Vercel for hosting/ deployment.
+- The technical stack used for this project includes NoSQL (MongoDB), Flask via Replit and Next.js/Vercel for hosting and deployment.
