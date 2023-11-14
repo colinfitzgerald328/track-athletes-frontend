@@ -23,8 +23,7 @@ export default function AthleteResults(props) {
     setAthlete(props.athlete);
     setTimeout(() => {
       setLoadingNewAthlete(false);
-    }
-    , 200);
+    }, 200);
   }, [props.athlete]);
 
   function isEven(n) {
@@ -39,9 +38,7 @@ export default function AthleteResults(props) {
           isEven(index) ? styles.singleResult : styles.singleResultDiff
         }
       >
-        <div className={styles.tableHeaderLabelSmallBold}>
-          {result.mark}
-        </div>
+        <div className={styles.tableHeaderLabelSmallBold}>{result.mark}</div>
         <div className={styles.tableHeaderLabelSmall}>{result.discipline}</div>
         <div className={styles.tableHeaderLabelLarge}>{result.venue}</div>
         <div className={styles.tableHeaderLabelSmallDate}>{result.date}</div>
@@ -61,18 +58,16 @@ export default function AthleteResults(props) {
       </div>
       <div className={styles.tableHeaderLabels}></div>
       <div className={styles.resultHolder}>
-        {
-          props.loadingNewAthlete ? (
-            <div>
-              <Skeleton variant="text" height={80}/>
-              <Skeleton variant="text" height={80}/>
-              <Skeleton variant="text" height={80}/>
-              <Skeleton variant="text" height={80}/>
-            </div>
-          ) : (
-            resultsMap
-          )
-        }
+        {props.loadingNewAthlete ? (
+          <div>
+            <Skeleton variant="text" height={80} />
+            <Skeleton variant="text" height={80} />
+            <Skeleton variant="text" height={80} />
+            <Skeleton variant="text" height={80} />
+          </div>
+        ) : (
+          resultsMap
+        )}
       </div>
     </div>
   );

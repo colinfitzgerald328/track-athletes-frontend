@@ -106,13 +106,10 @@ export default class MainComponent extends React.Component {
 
   fetchRandomAthlete() {
     API.getRandomDoc((athlete) => {
-      console.log(athlete);
       this.setState({
         athlete: athlete.random_doc,
       });
-      this.getResultsForAthlete(athlete.random_doc.aaAthleteId);
-      this.getPBSForAthlete(athlete.random_doc.aaAthleteId);
-      this.getAccoladesForAthlete(athlete.random_doc.urlSlug);
+      this.setAthlete(athlete.random_doc);
     });
   }
 
