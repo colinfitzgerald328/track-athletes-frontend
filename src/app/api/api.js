@@ -92,7 +92,6 @@ export async function getTopRecords(callback) {
     });
 }
 
-
 export async function getPBSForAthlete(athlete_code, callback) {
   var data = {
     athlete_id: athlete_code,

@@ -1,6 +1,5 @@
 ## Athletics Hub
 
-
 https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/a834d9a2-2587-4cf3-ab11-8060179e96f7
 
 ### Goal
@@ -21,13 +20,14 @@ When you search for an athlete, you want to know a couple of things:
 
 - While this information is available in a google search, myself and others commonly find that the auto-generated summaries from Wikipedia are too short, there is no live results stream available and that the information is not tailored to a track fan's desires. (think: accolades, personal bests)
 
-- This project involves generating descriptive summaries by utilizing data from Instagram and Wikipedia profiles of athletes. The process includes extracting information from these sources and then employing generative language models to generate coherent and well-written summaries. In addition, we collect and propogate data from World Athletics into a visual data display, making it easy and simplistic to stay up to date on your favorite athletes. 
+- This project involves generating descriptive summaries by utilizing data from Instagram and Wikipedia profiles of athletes. The process includes extracting information from these sources and then employing generative language models to generate coherent and well-written summaries. In addition, we collect and propogate data from World Athletics into a visual data display, making it easy and simplistic to stay up to date on your favorite athletes.
 
 Key features of the project include:
--   The ability to access a live stream displaying the athlete's most recent results
--   A summary of the athlete and their accomplishments, including personal bests and accolades
--   A list of their top 3 competitors
--   Links to their social media profiles (Instagram done, others in development)
+
+- The ability to access a live stream displaying the athlete's most recent results
+- A summary of the athlete and their accomplishments, including personal bests and accolades
+- A list of their top 3 competitors
+- Links to their social media profiles (Instagram done, others in development)
 
 ### Credit
 

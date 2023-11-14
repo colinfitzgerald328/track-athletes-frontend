@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
+import Skeleton from "@mui/material/Skeleton";
+import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
 import styles from "./styles.module.css";
 
 export default function AthleteResults(props) {
   const [athlete, setAthlete] = useState([]);
+  const [loadingNewAthlete, setLoadingNewAthlete] = useState(false);
   const { viewingAthlete } = props;
   const firstDiscipline = viewingAthlete.disciplines.split(",")[0].trim();
   const isFieldAthlete = [
@@ -18,19 +20,27 @@ export default function AthleteResults(props) {
   ].includes(firstDiscipline);
 
   useEffect(() => {
-    setAthlete([]);
     setAthlete(props.athlete);
+    setTimeout(() => {
+      setLoadingNewAthlete(false);
+    }
+    , 200);
   }, [props.athlete]);
 
   function isEven(n) {
     return n % 2 == 0;
- }
+  }
 
   const resultsMap = athlete.map((result, index) => {
     return (
-      <div key={index} className={isEven(index) ? styles.singleResult : styles.singleResultDiff}>
+      <div
+        key={index}
+        className={
+          isEven(index) ? styles.singleResult : styles.singleResultDiff
+        }
+      >
         <div className={styles.tableHeaderLabelSmallBold}>
-          {isFieldAthlete ? result.mark + "m" : result.mark}
+          {result.mark}
         </div>
         <div className={styles.tableHeaderLabelSmall}>{result.discipline}</div>
         <div className={styles.tableHeaderLabelLarge}>{result.venue}</div>
@@ -41,12 +51,29 @@ export default function AthleteResults(props) {
   return (
     <div className={styles.tableHolder}>
       <div className={styles.tableHeader}>
-        <img src={"https://cdn.icon-icons.com/icons2/2248/PNG/512/clock_fast_icon_137750.png"} className={styles.imageIcon} />
+        <img
+          src={
+            "https://cdn.icon-icons.com/icons2/2248/PNG/512/clock_fast_icon_137750.png"
+          }
+          className={styles.imageIcon}
+        />
         LATEST RESULTS
       </div>
-      <div className={styles.tableHeaderLabels}>
+      <div className={styles.tableHeaderLabels}></div>
+      <div className={styles.resultHolder}>
+        {
+          props.loadingNewAthlete ? (
+            <div>
+              <Skeleton variant="text" height={80}/>
+              <Skeleton variant="text" height={80}/>
+              <Skeleton variant="text" height={80}/>
+              <Skeleton variant="text" height={80}/>
+            </div>
+          ) : (
+            resultsMap
+          )
+        }
       </div>
-      <div className={styles.resultHolder}>{resultsMap}</div>
     </div>
   );
 }

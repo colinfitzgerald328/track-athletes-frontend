@@ -14,7 +14,7 @@
   margin-right: 20px;
   height: 50px;
   padding-left: 50px;
-  background-color: #59252E;
+  background-color: #59252e;
   border: 1px solid #578bb8;
   color: white;
   font-size: 20px;
@@ -29,7 +29,7 @@
   width: calc(100% - 20px);
   height: 50px;
   padding-left: 50px;
-  background-color: #59252E;
+  background-color: #59252e;
   border: 1px solid #578bb8;
   color: white;
   font-size: 20px;
@@ -73,7 +73,7 @@
 
 .searchResults {
   position: absolute;
-  background-color: #59252E;
+  background-color: #59252e;
   width: calc(100% - 50px);
   margin-top: 50px;
   left: 10px;

@@ -7,7 +7,7 @@
   align-items: center;
   max-width: 1800px;
   overflow-x: hidden;
-  background-color: #59252E;
+  background-color: #59252e;
 }
 
 .pageLabel {
@@ -15,7 +15,7 @@
   font-weight: bold;
   color: white;
   width: 90%;
-  color: #6AC2E6;
+  color: #6ac2e6;
   border-radius: 30px;
   padding: 20px;
 }
@@ -50,7 +50,7 @@
   padding: 10px;
   border-radius: 40px;
   overflow-x: hidden;
-  background-color: #59252E;
+  background-color: #59252e;
 }
 
 .mainTitle {
@@ -62,8 +62,8 @@
   padding-right: 15px;
   width: fit-content;
   border-radius: 20px;
-  color: #59252E; 
-  background-color: #F2C288;
+  color: #59252e;
+  background-color: #f2c288;
   line-height: normal;
   min-width: 300px;
 }
@@ -86,14 +86,14 @@
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   background-color: #325573;
-  border: 1px #F2C288;
+  border: 1px #f2c288;
 }
 
 .summaryLabel {
   font-size: 20px;
   font-weight: bold;
-    background-color: #F2C288;
-  color: #59252E;
+  background-color: #f2c288;
+  color: #59252e;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   padding: 10px 10px 10px 20px;
@@ -127,13 +127,11 @@
   padding-bottom: 10px;
 }
 
-
-
 .label {
   font-size: 20px;
   font-weight: bold;
-  background-color: #F2C288;
-  color: #59252E;
+  background-color: #f2c288;
+  color: #59252e;
   min-width: 250px;
   padding: 10px 10px 10px 20px;
 }
@@ -162,8 +160,8 @@
 }
 
 .openLink:hover {
-  color:#6AC2E6;
-  border: 1px solid #6AC2E6;
+  color: #6ac2e6;
+  border: 1px solid #6ac2e6;
   transition: 0.5s;
 }
 
@@ -194,33 +192,60 @@
   margin-top: 10px;
 }
 
-
 /* Color Theme Swatches in Hex */
-.Wilderness-1-hex { color: #59252E; }
-.Wilderness-2-hex { color: #325573; }
-.Wilderness-3-hex { color: #F28F16; }
-.Wilderness-4-hex { color: #F2C288; }
-.Wilderness-5-hex { color: #D95204; }
+.Wilderness-1-hex {
+  color: #59252e;
+}
+.Wilderness-2-hex {
+  color: #325573;
+}
+.Wilderness-3-hex {
+  color: #f28f16;
+}
+.Wilderness-4-hex {
+  color: #f2c288;
+}
+.Wilderness-5-hex {
+  color: #d95204;
+}
 
 /* Color Theme Swatches in RGBA */
-.Wilderness-1-rgba { color: rgba(89, 36, 46, 1); }
-.Wilderness-2-rgba { color: rgba(50, 84, 114, 1); }
-.Wilderness-3-rgba { color: rgba(242, 143, 21, 1); }
-.Wilderness-4-rgba { color: rgba(242, 194, 135, 1); }
-.Wilderness-5-rgba { color: rgba(216, 82, 4, 1); }
+.Wilderness-1-rgba {
+  color: rgba(89, 36, 46, 1);
+}
+.Wilderness-2-rgba {
+  color: rgba(50, 84, 114, 1);
+}
+.Wilderness-3-rgba {
+  color: rgba(242, 143, 21, 1);
+}
+.Wilderness-4-rgba {
+  color: rgba(242, 194, 135, 1);
+}
+.Wilderness-5-rgba {
+  color: rgba(216, 82, 4, 1);
+}
 
 /* Color Theme Swatches in HSLA */
-.Wilderness-1-hsla { color: hsla(348, 41, 24, 1); }
-.Wilderness-2-hsla { color: hsla(208, 38, 32, 1); }
-.Wilderness-3-hsla { color: hsla(33, 89, 51, 1); }
-.Wilderness-4-hsla { color: hsla(33, 80, 74, 1); }
-.Wilderness-5-hsla { color: hsla(22, 96, 43, 1); }
-
+.Wilderness-1-hsla {
+  color: hsla(348, 41, 24, 1);
+}
+.Wilderness-2-hsla {
+  color: hsla(208, 38, 32, 1);
+}
+.Wilderness-3-hsla {
+  color: hsla(33, 89, 51, 1);
+}
+.Wilderness-4-hsla {
+  color: hsla(33, 80, 74, 1);
+}
+.Wilderness-5-hsla {
+  color: hsla(22, 96, 43, 1);
+}
 
 .rightItemsHolder {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #325573;
-  border: 1px #F2C288;
+  border: 1px #f2c288;
 }
-

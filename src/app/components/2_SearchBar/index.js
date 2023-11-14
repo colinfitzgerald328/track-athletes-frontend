@@ -31,14 +31,11 @@ export default function SearchBar(props) {
     };
   }, []);
 
-  
-
   function getAndSetTop20Results() {
     API.getTopRecords((data) => {
       setSearchResults(data.records);
     });
   }
-
 
   function handleChooseAthlete(athlete) {
     props.setAthlete(athlete);
@@ -46,7 +43,7 @@ export default function SearchBar(props) {
     setSearchResults([]);
   }
 
-  const searchTermRef = useRef('');
+  const searchTermRef = useRef("");
   const timeoutIdRef = useRef(null);
 
   const handleInputChange = (event) => {
@@ -128,7 +125,10 @@ export default function SearchBar(props) {
           }
           placeholder="Search for an athlete..."
           value={searchTerm}
-          onChange={(event) => {handleInputChange(event); setSearchTerm(event.target.value)}}
+          onChange={(event) => {
+            handleInputChange(event);
+            setSearchTerm(event.target.value);
+          }}
           onMouseDown={() => getAndSetTop20Results()}
         />
       </div>
@@ -140,6 +140,3 @@ export default function SearchBar(props) {
     </div>
   );
 }
-
-
-
