@@ -28,6 +28,7 @@ Key features of the project include:
 - A summary of the athlete and their accomplishments, including personal bests and accolades
 - A list of their top 3 competitors
 - Links to their social media profiles (Instagram done, others in development)
+- A graph of the athlete's performances for the current year
 
 ### Credit
 
