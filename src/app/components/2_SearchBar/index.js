@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import * as API from "src/app/api/api.js";
 import styles from "./styles.module.css";
@@ -31,15 +31,7 @@ export default function SearchBar(props) {
     };
   }, []);
 
-  function getSearchResults(searchTerm) {
-    if (searchTerm.length === 0) {
-      setSearchResults([]);
-      return;
-    }
-    API.getSearchResultsForQuery(searchTerm, (data) => {
-      setSearchResults(data.search_results);
-    });
-  }
+  
 
   function getAndSetTop20Results() {
     API.getTopRecords((data) => {
@@ -47,15 +39,53 @@ export default function SearchBar(props) {
     });
   }
 
-  useEffect(() => {
-    getSearchResults(searchTerm);
-  }, [searchTerm]);
 
   function handleChooseAthlete(athlete) {
     props.setAthlete(athlete);
     setSearchTerm("");
     setSearchResults([]);
   }
+
+  const searchTermRef = useRef('');
+  const timeoutIdRef = useRef(null);
+
+  const handleInputChange = (event) => {
+    const newSearchTerm = event.target.value;
+    // Update the ref with the new search term
+    searchTermRef.current = newSearchTerm;
+    // Trigger the search function
+    getSearchResults(newSearchTerm);
+  };
+
+  const getSearchResults = (searchTerm) => {
+    if (searchTerm.length === 0) {
+      setSearchResults([]);
+      // Clear the previous timeout if the search term is empty
+      clearTimeout(timeoutIdRef.current);
+      return;
+    }
+
+    // Update the ref with the current search term
+    searchTermRef.current = searchTerm;
+
+    // Clear the previous timeout
+    clearTimeout(timeoutIdRef.current);
+
+    // Set a new timeout
+    timeoutIdRef.current = setTimeout(() => {
+      API.getSearchResultsForQuery(searchTermRef.current, (data) => {
+        console.log("getting search results for query", searchTermRef.current);
+        setSearchResults(data.search_results);
+      });
+    }, 1000);
+  };
+
+  // Cleanup the timeout when the component unmounts
+  useEffect(() => {
+    return () => {
+      clearTimeout(timeoutIdRef.current);
+    };
+  }, []);
 
   const searchResultsMap = searchResults.map((athlete, index) => (
     <div
@@ -98,7 +128,7 @@ export default function SearchBar(props) {
           }
           placeholder="Search for an athlete..."
           value={searchTerm}
-          onChange={(event) => setSearchTerm(event.target.value)}
+          onChange={(event) => {handleInputChange(event); setSearchTerm(event.target.value)}}
           onMouseDown={() => getAndSetTop20Results()}
         />
       </div>
@@ -110,3 +140,6 @@ export default function SearchBar(props) {
     </div>
   );
 }
+
+
+
