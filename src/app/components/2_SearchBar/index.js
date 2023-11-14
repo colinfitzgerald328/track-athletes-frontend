@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import SearchIcon from "@mui/icons-material/Search";
+import Skeleton from "@mui/material/Skeleton";
 import * as API from "src/app/api/api.js";
 import styles from "./styles.module.css";
 
 export default function SearchBar(props) {
+  const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
@@ -70,11 +72,16 @@ export default function SearchBar(props) {
 
     // Set a new timeout
     timeoutIdRef.current = setTimeout(() => {
+      console.log("getting search results for query", searchTermRef.current);
+      setLoading(true);
+      setTimeout(() => {
       API.getSearchResultsForQuery(searchTermRef.current, (data) => {
-        console.log("getting search results for query", searchTermRef.current);
+        console.log(data);
         setSearchResults(data.search_results);
+        setLoading(false);
       });
-    }, 1000);
+    }, 500);
+    }, 500);
   };
 
   // Cleanup the timeout when the component unmounts
@@ -109,6 +116,8 @@ export default function SearchBar(props) {
     </div>
   ));
 
+  console.log(searchResults.length)
+  
   return (
     <div ref={searchBarRef} className={styles.searchBarPositioner}>
       <div className={styles.inputContainer}>
@@ -132,10 +141,19 @@ export default function SearchBar(props) {
           onMouseDown={() => getAndSetTop20Results()}
         />
       </div>
-      {searchResults.length > 0 && (
+      {searchResults.length > 0 && !loading ? (
+                <div ref={searchResultsRef} className={styles.searchResults}>
+                {searchResultsMap}
+              </div>
+      ) : loading ? (
         <div ref={searchResultsRef} className={styles.searchResults}>
-          {searchResultsMap}
+          <Skeleton height={100} />
+          <Skeleton height={100} />
+          <Skeleton height={100} />
+          <Skeleton height={100} />
         </div>
+      ) : (
+        ""
       )}
     </div>
   );
