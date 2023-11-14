@@ -34,9 +34,22 @@ export default function GraphModal(props) {
       return (
         <div className={styles.customTooltip}>
           <p className={styles.label}>{`Score: ${payload[0].value}`}</p>
-          <p className="label">{`Mark: ${payload[0].payload.mark}`}</p>
-          <p className="label">{`Event: ${payload[0].payload.discipline}`}</p>
-          <p className="label">{`Date: ${payload[0].payload.date}`}</p>
+          <p className="label">
+            <b style={{"marginRight": "5px"}}>Mark:</b> 
+            {payload[0].payload.mark}
+          </p>
+          <p className="label">
+            <b style={{"marginRight": "5px"}}>Event:</b>
+            {payload[0].payload.discipline}
+          </p>
+          <p className="label">
+          <b style={{"marginRight": "5px"}}>Competition:</b>
+            {payload[0].payload.competition}
+          </p>
+          <p className="label">
+          <b style={{"marginRight": "5px"}}>Date:</b>
+            {payload[0].payload.date}
+          </p>
         </div>
       );
     }
@@ -76,7 +89,7 @@ export default function GraphModal(props) {
           stroke='#59252e'
           domain={['dataMin - 100', 'dataMax + 100']}
           />
-             <Tooltip content={<CustomTooltip />} />
+             <Tooltip content={<CustomTooltip />} cursor={{ stroke: "#325573", strokeDasharray: '3 3' }} />
           <Legend
           stroke='#59252e'
           />
