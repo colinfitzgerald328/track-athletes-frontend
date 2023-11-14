@@ -20,7 +20,7 @@ export default function SearchBar(props) {
         searchResultsRef.current &&
         !searchResultsRef.current.contains(event.target)
       ) {
-        // Click occurred outside of the search bar and search results, clear the search results.
+        // Click occurred outside of the search bar and search results, clear the search results
         setSearchResults([]);
       }
     };
@@ -28,7 +28,6 @@ export default function SearchBar(props) {
     document.addEventListener("click", handleDocumentClick);
 
     return () => {
-      // Clean up the event listener when the component unmounts.
       document.removeEventListener("click", handleDocumentClick);
     };
   }, []);
@@ -50,16 +49,13 @@ export default function SearchBar(props) {
 
   const handleInputChange = (event) => {
     const newSearchTerm = event.target.value;
-    // Update the ref with the new search term
     searchTermRef.current = newSearchTerm;
-    // Trigger the search function
     getSearchResults(newSearchTerm);
   };
 
   const getSearchResults = (searchTerm) => {
     if (searchTerm.length === 0) {
       setSearchResults([]);
-      // Clear the previous timeout if the search term is empty
       clearTimeout(timeoutIdRef.current);
       return;
     }
@@ -70,17 +66,16 @@ export default function SearchBar(props) {
     // Clear the previous timeout
     clearTimeout(timeoutIdRef.current);
 
-    // Set a new timeout
     timeoutIdRef.current = setTimeout(() => {
       console.log("getting search results for query", searchTermRef.current);
       setLoading(true);
       setTimeout(() => {
-      API.getSearchResultsForQuery(searchTermRef.current, (data) => {
-        console.log(data);
-        setSearchResults(data.search_results);
-        setLoading(false);
-      });
-    }, 500);
+        API.getSearchResultsForQuery(searchTermRef.current, (data) => {
+          console.log(data);
+          setSearchResults(data.search_results);
+          setLoading(false);
+        });
+      }, 500);
     }, 500);
   };
 
@@ -116,13 +111,12 @@ export default function SearchBar(props) {
     </div>
   ));
 
-  console.log(searchResults.length)
-  
+  console.log(searchResults.length);
+
   return (
     <div ref={searchBarRef} className={styles.searchBarPositioner}>
       <div className={styles.inputContainer}>
         <SearchIcon
-          src="your-image.jpg" // You should set the correct image source
           alt="Search"
           className={styles.inputImage}
           sx={{ marginLeft: 1, fontSize: 30, color: "white" }}
@@ -142,9 +136,9 @@ export default function SearchBar(props) {
         />
       </div>
       {searchResults.length > 0 && !loading ? (
-                <div ref={searchResultsRef} className={styles.searchResults}>
-                {searchResultsMap}
-              </div>
+        <div ref={searchResultsRef} className={styles.searchResults}>
+          {searchResultsMap}
+        </div>
       ) : loading ? (
         <div ref={searchResultsRef} className={styles.searchResults}>
           <Skeleton height={100} />

@@ -89,15 +89,12 @@ export default class MainComponent extends React.Component {
         this.getAccoladesForAthlete(athlete.urlSlug),
       ]);
 
-      // All three functions have completed successfully
       this.setState({
         loadingNewAthlete: false,
       });
     } catch (error) {
-      // Handle errors if any of the functions fail
       console.error("Error occurred:", error);
 
-      // You may want to set loadingNewAthlete to false here as well
       this.setState({
         loadingNewAthlete: false,
       });
