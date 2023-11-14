@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Skeleton from "@mui/material/Skeleton";
 import GraphModal from "./1_GraphModal";
-import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import AutoGraphIcon from "@mui/icons-material/AutoGraph";
 import styles from "./styles.module.css";
 
 export default function AthleteResults(props) {
@@ -40,7 +40,6 @@ export default function AthleteResults(props) {
     setGraphModalOpen(false);
   }
 
-
   const resultsMap = athlete.map((result, index) => {
     return (
       <div
@@ -63,22 +62,18 @@ export default function AthleteResults(props) {
         viewingAthlete={viewingAthlete}
         graphModalOpen={graphModalOpen}
         closeGraphModal={closeGraphModal}
-      >
-
-      </GraphModal>
+      ></GraphModal>
       <div className={styles.tableHeader}>
         <div className={styles.leftItemsHolder}>
-        <img
-          src={
-            "https://cdn.icon-icons.com/icons2/2248/PNG/512/clock_fast_icon_137750.png"
-          }
-          className={styles.imageIcon}
-        />
-        LATEST RESULTS
+          <img
+            src={
+              "https://cdn.icon-icons.com/icons2/2248/PNG/512/clock_fast_icon_137750.png"
+            }
+            className={styles.imageIcon}
+          />
+          LATEST RESULTS
         </div>
-        <div
-        onClick={() => openGraphModal()}
-        >
+        <div onClick={() => openGraphModal()}>
           <AutoGraphIcon className={styles.graphIcon} />
         </div>
       </div>
