@@ -1,10 +1,14 @@
 ## Athletics Hub
 
-https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/a834d9a2-2587-4cf3-ab11-8060179e96f7
+
+
+https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/ed0693e4-0d1f-434f-ab59-20076b5ba8aa
+
+
 
 ### Goal
 
-Built with the track fan in mind, the goal of athletics hub is to to build an easily-accessible web platform for track and field fans to follow their favorite athletes throughout the season.
+Built with the track fan in mind, the goal of athletics hub is to to build an all-in-one platform for track and field fans to follow their sport throughout the season.
 We've currently indexed the top 100 male and female athletes in the world and plan to expand this number to 1000+ within the next week.
 
 ### The Project
