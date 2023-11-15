@@ -18,6 +18,9 @@
   border: 1px solid #578bb8;
   color: white;
   font-size: 20px;
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
 }
 
 .searchBar:focus {
@@ -35,6 +38,9 @@
   font-size: 20px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
 }
 
 .searchBarFocus:focus {

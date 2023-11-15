@@ -181,15 +181,18 @@ export default class MainComponent extends React.Component {
                   >
                     READ MORE
                   </div>
-                  <div className={styles.socialIconHolder}>
-                    <img
-                      onClick={() =>
-                        window.open(this.state.athlete.instagram_url)
-                      }
-                      className={styles.image}
-                      src="https://worldathletics.org/static/instagram.svg"
-                    />
-                  </div>
+                  {
+                    this.state.athlete.instagram_url &&
+                    <div className={styles.socialIconHolder}>
+                      <img
+                        onClick={() =>
+                          window.open(this.state.athlete.instagram_url)
+                        }
+                        className={styles.image}
+                        src="https://worldathletics.org/static/instagram.svg"
+                      />
+                    </div>
+                  }
                 </div>
               </div>
               <div className={styles.mainSummary}>
