@@ -144,7 +144,6 @@ export async function getAccoladesForAthlete(url_slug, callback) {
     });
 }
 
-
 export async function getAthleteById(athlete_id, callback) {
   var data = {
     athlete_id: athlete_id,

@@ -125,18 +125,17 @@ export default class MainComponent extends React.Component {
     }
     // Split the text into sentences using regular expressions.
     const sentences = text.split(". ");
-  
+
     // Join the sentences to create separate paragraphs.
     const paragraphs = sentences.map((sentence, index) => (
       <p key={index} className={styles.sentence}>
         {index === sentences.length - 1 ? sentence : sentence + "."}
       </p>
     ));
-  
+
     // Join the paragraphs to create the final result.
     return paragraphs;
   }
-  
 
   normalizeName(name) {
     const nameParts = name.toLowerCase().split(" ");
@@ -148,11 +147,13 @@ export default class MainComponent extends React.Component {
 
   formatAccolade(accolade) {
     const parts = accolade.split("x");
-    const count = parts[0]; 
+    const count = parts[0];
     const name = parts[1];
-    return <div className={styles.accoladeContainer}>
-      <b style={{marginRight: "5px"}}>{count}x</b> {name}
-    </div>
+    return (
+      <div className={styles.accoladeContainer}>
+        <b style={{ marginRight: "5px" }}>{count}x</b> {name}
+      </div>
+    );
   }
 
   render() {
@@ -190,8 +191,7 @@ export default class MainComponent extends React.Component {
                   >
                     READ MORE
                   </div>
-                  {
-                    this.state.athlete.instagram_url &&
+                  {this.state.athlete.instagram_url && (
                     <div className={styles.socialIconHolder}>
                       <img
                         onClick={() =>
@@ -201,7 +201,7 @@ export default class MainComponent extends React.Component {
                         src="https://worldathletics.org/static/instagram.svg"
                       />
                     </div>
-                  }
+                  )}
                 </div>
               </div>
               <div className={styles.mainSummary}>
@@ -218,7 +218,9 @@ export default class MainComponent extends React.Component {
                 <div className={styles.rightItemsHolder}>
                   <div className={styles.closestCompetitors}>
                     <div className={styles.label}>
-                      <LocalFireDepartmentIcon sx={{margin: 0, padding: 0}}></LocalFireDepartmentIcon>
+                      <LocalFireDepartmentIcon
+                        sx={{ margin: 0, padding: 0 }}
+                      ></LocalFireDepartmentIcon>
                       COMPETITION
                     </div>
                     <div className={styles.competitorsWithSlightlyLessMargin}>
@@ -232,11 +234,22 @@ export default class MainComponent extends React.Component {
                         this.state.athlete.top_competitors_with_reference.map(
                           (competitor, index) => (
                             <div
-                            key={index}
-                            className={competitor.athlete_id ? styles.competitor : styles.competitorNoLink}
-                            onClick={()=> this.setAthleteFromTopCompetitors(competitor.athlete_id)}
-                          >
-                              {index + 1}. <b style={{marginLeft: "5px"}}>{this.normalizeName(competitor.athlete_name)}</b>
+                              key={index}
+                              className={
+                                competitor.athlete_id
+                                  ? styles.competitor
+                                  : styles.competitorNoLink
+                              }
+                              onClick={() =>
+                                this.setAthleteFromTopCompetitors(
+                                  competitor.athlete_id,
+                                )
+                              }
+                            >
+                              {index + 1}.{" "}
+                              <b style={{ marginLeft: "5px" }}>
+                                {this.normalizeName(competitor.athlete_name)}
+                              </b>
                             </div>
                           ),
                         )
@@ -255,7 +268,8 @@ export default class MainComponent extends React.Component {
                       ) : (
                         this.state.athlete_pbs.map((data, index) => (
                           <div key={index} className={styles.competitorNoLink}>
-                            <b style={{marginRight: "5px"}}>{data.result}</b> - {data.discipline}
+                            <b style={{ marginRight: "5px" }}>{data.result}</b>{" "}
+                            - {data.discipline}
                           </div>
                         ))
                       )}
@@ -272,7 +286,7 @@ export default class MainComponent extends React.Component {
                         </div>
                       ) : (
                         this.state.athlete_accolades.map((accolade, index) => (
-                          <div key={index} className={styles.competitorNoLink}>
+                          <div key={index} className={styles.accoladesBox}>
                             {this.formatAccolade(accolade)}
                           </div>
                         ))

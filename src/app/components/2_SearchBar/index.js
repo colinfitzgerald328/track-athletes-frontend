@@ -122,7 +122,9 @@ export default function SearchBar(props) {
         <input
           type="text"
           className={
-            searchResults.length > 0 || loading ? styles.searchBarFocus : styles.searchBar
+            searchResults.length > 0 || loading
+              ? styles.searchBarFocus
+              : styles.searchBar
           }
           placeholder="Search for an athlete..."
           value={searchTerm}

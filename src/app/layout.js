@@ -9,9 +9,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en">
       <Head>
-        <link rel="icon" href="/page_logo.svg" />
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
       </Head>
       <body>{children}</body>
     </html>
