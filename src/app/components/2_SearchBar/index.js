@@ -75,8 +75,8 @@ export default function SearchBar(props) {
           setSearchResults(data.search_results);
           setLoading(false);
         });
-      }, 500);
-    }, 500);
+      }, 200);
+    }, 200);
   };
 
   // Cleanup the timeout when the component unmounts
@@ -110,8 +110,6 @@ export default function SearchBar(props) {
       </div>
     </div>
   ));
-
-  console.log(searchResults.length);
 
   return (
     <div ref={searchBarRef} className={styles.searchBarPositioner}>

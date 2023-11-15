@@ -25,7 +25,7 @@ export default function AthleteResults(props) {
     setAthlete(props.athlete);
     setTimeout(() => {
       setLoadingNewAthlete(false);
-    }, 200);
+    }, 100);
   }, [props.athlete]);
 
   function isEven(n) {

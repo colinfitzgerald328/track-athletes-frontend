@@ -136,6 +136,15 @@ export default class MainComponent extends React.Component {
     return normalizedParts.join(" ");
   }
 
+  formatAccolade(accolade) {
+    const parts = accolade.split("x");
+    const count = parts[0]; 
+    const name = parts[1];
+    return <div className={styles.accoladeContainer}>
+      <b style={{marginRight: "5px"}}>{count}x</b> {name}
+    </div>
+  }
+
   render() {
     if (this.state.athlete.length === 0) {
       return <div>Loading...</div>;
@@ -210,7 +219,7 @@ export default class MainComponent extends React.Component {
                         this.state.athlete.top_competitors.map(
                           (competitor, index) => (
                             <div key={index} className={styles.competitor}>
-                              {index + 1}. {this.normalizeName(competitor)}
+                              {index + 1}. <b style={{marginLeft: "5px"}}>{this.normalizeName(competitor)}</b>
                             </div>
                           ),
                         )
@@ -229,7 +238,7 @@ export default class MainComponent extends React.Component {
                       ) : (
                         this.state.athlete_pbs.map((data, index) => (
                           <div key={index} className={styles.competitor}>
-                            {data.discipline} - {data.result}
+                            <b style={{marginRight: "5px"}}>{data.result}</b> - {data.discipline}
                           </div>
                         ))
                       )}
@@ -247,7 +256,7 @@ export default class MainComponent extends React.Component {
                       ) : (
                         this.state.athlete_accolades.map((accolade, index) => (
                           <div key={index} className={styles.competitor}>
-                            {accolade}
+                            {this.formatAccolade(accolade)}
                           </div>
                         ))
                       )}
