@@ -38,6 +38,10 @@
   border-radius: 40px;
   z-index: 1;
   position: relative;
+  background-color: red;
+  width: 612px;
+  height: 408px;
+  object-fit: cover;
 }
 
 .mainText {
@@ -122,6 +126,13 @@
 }
 
 .competitors {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.competitorsWithSlightlyLessMargin {
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 10px;
@@ -261,8 +272,28 @@
 
 .competitor {
   display: flex;
-  padding-bottom: 5px;
+  align-items: center;
   font-weight: 400;
+  border-radius: 10px;
+  padding-top: 8px;
+  padding-bottom: 5.5px;
+  padding-left: 5px;
+}
+
+.competitorNoLink {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  border-radius: 10px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+
+.competitor:hover {
+  background-color: #f2c288;
+  color: #59252e;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .accoladeContainer {

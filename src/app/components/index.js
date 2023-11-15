@@ -110,6 +110,15 @@ export default class MainComponent extends React.Component {
     });
   }
 
+  setAthleteFromTopCompetitors(athlete_id) {
+    API.getAthleteById(athlete_id, (athlete) => {
+      this.setState({
+        athlete: athlete.found_athlete,
+      });
+      this.setAthlete(athlete.found_athlete);
+    });
+  }
+
   separateSentencesIntoParagraphs(text) {
     if (!text) {
       return "";
@@ -212,7 +221,7 @@ export default class MainComponent extends React.Component {
                       <LocalFireDepartmentIcon sx={{margin: 0, padding: 0}}></LocalFireDepartmentIcon>
                       COMPETITION
                     </div>
-                    <div className={styles.competitors}>
+                    <div className={styles.competitorsWithSlightlyLessMargin}>
                       {this.state.loadingNewAthlete ? (
                         <div>
                           <Skeleton />
@@ -220,10 +229,14 @@ export default class MainComponent extends React.Component {
                           <Skeleton />
                         </div>
                       ) : (
-                        this.state.athlete.top_competitors.map(
+                        this.state.athlete.top_competitors_with_reference.map(
                           (competitor, index) => (
-                            <div key={index} className={styles.competitor}>
-                              {index + 1}. <b style={{marginLeft: "5px"}}>{this.normalizeName(competitor)}</b>
+                            <div
+                            key={index}
+                            className={competitor.athlete_id ? styles.competitor : styles.competitorNoLink}
+                            onClick={()=> this.setAthleteFromTopCompetitors(competitor.athlete_id)}
+                          >
+                              {index + 1}. <b style={{marginLeft: "5px"}}>{this.normalizeName(competitor.athlete_name)}</b>
                             </div>
                           ),
                         )
@@ -241,7 +254,7 @@ export default class MainComponent extends React.Component {
                         </div>
                       ) : (
                         this.state.athlete_pbs.map((data, index) => (
-                          <div key={index} className={styles.competitor}>
+                          <div key={index} className={styles.competitorNoLink}>
                             <b style={{marginRight: "5px"}}>{data.result}</b> - {data.discipline}
                           </div>
                         ))
@@ -259,7 +272,7 @@ export default class MainComponent extends React.Component {
                         </div>
                       ) : (
                         this.state.athlete_accolades.map((accolade, index) => (
-                          <div key={index} className={styles.competitor}>
+                          <div key={index} className={styles.competitorNoLink}>
                             {this.formatAccolade(accolade)}
                           </div>
                         ))

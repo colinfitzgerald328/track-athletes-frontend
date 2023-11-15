@@ -144,4 +144,31 @@ export async function getAccoladesForAthlete(url_slug, callback) {
     });
 }
 
+
+export async function getAthleteById(athlete_id, callback) {
+  var data = {
+    athlete_id: athlete_id,
+  };
+
+  // hello world
+
+  var url = new URL(API_URL + "/athlete/byId");
+  url.search = new URLSearchParams(data).toString();
+  fetch(url)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Something went wrong ...");
+      }
+    })
+    .then((data) => {
+      // TODO Fill in Data
+      callback(data);
+    })
+    .catch((error) => {
+      // toaster.danger("API Error on getting notifications");
+    });
+}
+
 ///query/top
