@@ -115,18 +115,19 @@ export default class MainComponent extends React.Component {
       return "";
     }
     // Split the text into sentences using regular expressions.
-    const sentences = text.split(/(?<=[.!?])\s+/);
-
+    const sentences = text.split(". ");
+  
     // Join the sentences to create separate paragraphs.
     const paragraphs = sentences.map((sentence, index) => (
       <p key={index} className={styles.sentence}>
-        {sentence}
+        {index === sentences.length - 1 ? sentence : sentence + "."}
       </p>
     ));
-
+  
     // Join the paragraphs to create the final result.
     return paragraphs;
   }
+  
 
   normalizeName(name) {
     const nameParts = name.toLowerCase().split(" ");
