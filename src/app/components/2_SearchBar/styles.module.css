@@ -20,7 +20,7 @@
   font-size: 20px;
   display: flex;
   align-items: center;
-  padding-top: 5px;
+  padding-top: 2.5px;
 }
 
 .searchBar:focus {
@@ -40,7 +40,7 @@
   border-bottom-right-radius: 0px;
   display: flex;
   align-items: center;
-  padding-top: 5px;
+  padding-top: 2.5px;
 }
 
 .searchBarFocus:focus {

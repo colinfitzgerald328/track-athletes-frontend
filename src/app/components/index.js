@@ -209,7 +209,7 @@ export default class MainComponent extends React.Component {
                 <div className={styles.rightItemsHolder}>
                   <div className={styles.closestCompetitors}>
                     <div className={styles.label}>
-                      <LocalFireDepartmentIcon></LocalFireDepartmentIcon>{" "}
+                      <LocalFireDepartmentIcon sx={{margin: 0, padding: 0}}></LocalFireDepartmentIcon>
                       COMPETITION
                     </div>
                     <div className={styles.competitors}>
