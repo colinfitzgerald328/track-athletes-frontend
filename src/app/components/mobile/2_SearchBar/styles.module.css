@@ -1,0 +1,131 @@
+.searchBarPositioner {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  z-index: 1000;
+  width: calc(100% - 0px);
+  position: relative;
+}
+
+.searchBar {
+  border-radius: 30px;
+  width: calc(100% - 0px);
+  margin-right: 20px;
+  height: 50px;
+  padding-left: 50px;
+  background-color: #59252e;
+  border: 1px solid #578bb8;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  padding-top: 2.5px;
+}
+
+.searchBar:focus {
+  outline: none;
+}
+
+.searchBarFocus {
+  border-radius: 30px;
+  width: calc(100% - 0px);
+  height: 50px;
+  padding-left: 50px;
+  background-color: #59252e;
+  border: 1px solid #578bb8;
+  color: white;
+  font-size: 20px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  display: flex;
+  align-items: center;
+  padding-top: 2.5px;
+}
+
+.searchBarFocus:focus {
+  outline: none;
+}
+
+.searchBar::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+.searchBarFocus::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+.searchBarText {
+}
+
+/* components/SearchBar.module.css */
+.inputContainer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px; 
+}
+
+.inputImage {
+  position: absolute;
+  left: 10px; /* Adjust the left position as needed */
+  top: 50%; /* Adjust the top position as needed */
+  transform: translateY(-50%);
+}
+
+.searchResults {
+  position: absolute;
+  background-color: #59252e;
+  width: calc(100% - 40px);
+  margin-top: 50px;
+  left: 20px;
+  height: 300px;
+  z-index: 100;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow-y: scroll;
+  border: 1px solid #578bb8;
+}
+
+.searchResults::-webkit-scrollbar {
+  display: none;
+}
+
+.singleResult {
+  display: flex;
+  color: white;
+  padding: 10px;
+}
+
+.singleResult:hover {
+  background-color: #578bb8;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.noBorderBottom {
+  border-bottom: none;
+}
+
+.athleteImage {
+  width: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.singleResultText {
+  margin-left: 10px;
+}
+
+.singleResultName {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.singleResultDiscipline {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+}
