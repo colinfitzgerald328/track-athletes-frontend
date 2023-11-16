@@ -23,7 +23,7 @@ const style = {
   width: 1000,
   height: 500,
   bgcolor: "#59252e",
-  borderRadius: "20px",
+  borderRadius: "30px",
   outline: "none",
   boxShadow: 24,
   display: "flex",
