@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   background-color: #59252e;
+  color: white;
 }
 
 .desktopMain {
@@ -12,4 +13,6 @@
   justify-content: center;
   align-items: center;
   position: fixed;
+  background-color: #59252e;
+  color: white;
 }

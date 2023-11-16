@@ -119,7 +119,7 @@ export default class MobileVersion extends React.Component {
                                 : styles.competitorNoLink
                             }
                             onClick={() =>
-                              this.setAthleteFromTopCompetitors(
+                              this.props.setAthleteFromTopCompetitors(
                                 competitor.athlete_id,
                               )
                             }

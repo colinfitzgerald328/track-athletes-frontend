@@ -134,6 +134,7 @@ export default class MainComponent extends React.Component {
             athlete_pbs={this.state.athlete_pbs}
             athlete_accolades={this.state.athlete_accolades}
             loadingNewAthlete={this.state.loadingNewAthlete}
+            setAthleteFromTopCompetitors={this.setAthleteFromTopCompetitors.bind(this)}
           />
         </div>
       );
@@ -147,6 +148,7 @@ export default class MainComponent extends React.Component {
             athlete_pbs={this.state.athlete_pbs}
             athlete_accolades={this.state.athlete_accolades}
             loadingNewAthlete={this.state.loadingNewAthlete}
+            setAthleteFromTopCompetitors={this.setAthleteFromTopCompetitors.bind(this)}
           />
         </div>
       );
