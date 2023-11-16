@@ -76,7 +76,6 @@ export default class MainComponent extends React.Component {
     });
   }
 
-
   setAthlete = async (athlete) => {
     this.setState({
       athlete: athlete,
@@ -123,7 +122,6 @@ export default class MainComponent extends React.Component {
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
-
 
   render() {
     if (this.state.width > 1400) {
