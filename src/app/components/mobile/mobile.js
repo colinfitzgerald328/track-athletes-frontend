@@ -77,7 +77,6 @@ export default class MobileVersion extends React.Component {
     this.fetchRandomAthlete();
   }
 
-
   setAthlete = async (athlete) => {
     this.setState({
       athlete: athlete,
@@ -160,145 +159,147 @@ export default class MobileVersion extends React.Component {
 
   render() {
     if (this.state.athlete.length === 0) {
-      return <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-          width: "100vw",
-        }}
-      >Loading...</div>;
+      return (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+            width: "100vw",
+          }}
+        >
+          Loading...
+        </div>
+      );
     } else if (this.state.athlete) {
       return (
         <div className={styles.main}>
           <div className={styles.pageLabel}>athletics hub</div>
-            <SearchBar
-              setAthlete={this.setAthlete.bind(this)}
-              athlete={this.state.athlete}
+          <SearchBar
+            setAthlete={this.setAthlete.bind(this)}
+            athlete={this.state.athlete}
+          />
+          <div className={styles.mainImage}>
+            <img
+              className={styles.athleteImage}
+              src={this.state.athlete.hq_image_url}
             />
-            <div className={styles.mainImage}>
-              <img
-                className={styles.athleteImage}
-                src={this.state.athlete.hq_image_url}
-              />
-            </div>
-            <div className={styles.mainText}>
-              <div className={styles.container}>
-                <div className={styles.mainTitle}>
-                  <div>{this.state.athlete.full_name}</div>
-                  <div className={styles.mainEvents}>
-                    {this.state.athlete.disciplines}
-                  </div>
+          </div>
+          <div className={styles.mainText}>
+            <div className={styles.container}>
+              <div className={styles.mainTitle}>
+                <div>{this.state.athlete.full_name}</div>
+                <div className={styles.mainEvents}>
+                  {this.state.athlete.disciplines}
                 </div>
               </div>
-              <div className={styles.mainSummary}>
-                <div className={styles.rightItemsHolder}>
-                  <div className={styles.closestCompetitors}>
-                    <div className={styles.label}>
-                      <LocalFireDepartmentIcon
-                        sx={{ margin: 0, padding: 0 }}
-                      ></LocalFireDepartmentIcon>
-                      COMPETITION
-                    </div>
-                    <div className={styles.competitorsWithSlightlyLessMargin}>
-                      {this.state.loadingNewAthlete ? (
-                        <div>
-                          <Skeleton />
-                          <Skeleton />
-                          <Skeleton />
-                        </div>
-                      ) : (
-                        this.state.athlete.top_competitors_with_reference.map(
-                          (competitor, index) => (
-                            <div
-                              key={index}
-                              className={
-                                competitor.athlete_id
-                                  ? styles.competitor
-                                  : styles.competitorNoLink
-                              }
-                              onClick={() =>
-                                this.setAthleteFromTopCompetitors(
-                                  competitor.athlete_id,
-                                )
-                              }
-                            >
-                              {index + 1}.{" "}
-                              <b style={{ marginLeft: "5px" }}>
-                                {this.normalizeName(competitor.athlete_name)}
-                              </b>
-                            </div>
-                          ),
-                        )
-                      )}
-                    </div>
+            </div>
+            <div className={styles.mainSummary}>
+              <div className={styles.rightItemsHolder}>
+                <div className={styles.closestCompetitors}>
+                  <div className={styles.label}>
+                    <LocalFireDepartmentIcon
+                      sx={{ margin: 0, padding: 0 }}
+                    ></LocalFireDepartmentIcon>
+                    COMPETITION
                   </div>
-                  <div className={styles.closestCompetitors}>
-                    <div className={styles.label}>PERSONAL BESTS</div>
-                    <div className={styles.competitors}>
-                      {this.state.loadingNewAthlete ? (
-                        <div>
-                          <Skeleton />
-                          <Skeleton />
-                          <Skeleton />
-                        </div>
-                      ) : (
-                        this.state.athlete_pbs.map((data, index) => (
-                          <div key={index} className={styles.competitorNoLink}>
-                            <b style={{ marginRight: "5px" }}>{data.result}</b>{" "}
-                            - {data.discipline}
+                  <div className={styles.competitorsWithSlightlyLessMargin}>
+                    {this.state.loadingNewAthlete ? (
+                      <div>
+                        <Skeleton />
+                        <Skeleton />
+                        <Skeleton />
+                      </div>
+                    ) : (
+                      this.state.athlete.top_competitors_with_reference.map(
+                        (competitor, index) => (
+                          <div
+                            key={index}
+                            className={
+                              competitor.athlete_id
+                                ? styles.competitor
+                                : styles.competitorNoLink
+                            }
+                            onClick={() =>
+                              this.setAthleteFromTopCompetitors(
+                                competitor.athlete_id,
+                              )
+                            }
+                          >
+                            {index + 1}.{" "}
+                            <b style={{ marginLeft: "5px" }}>
+                              {this.normalizeName(competitor.athlete_name)}
+                            </b>
                           </div>
-                        ))
-                      )}
-                    </div>
-                  </div>
-                  <div className={styles.closestCompetitors}>
-                    <div className={styles.label}>ACCOLADES</div>
-                    <div className={styles.competitors}>
-                      {this.state.loadingNewAthlete ? (
-                        <div>
-                          <Skeleton />
-                          <Skeleton />
-                          <Skeleton />
-                        </div>
-                      ) : (
-                        this.state.athlete_accolades.map((accolade, index) => (
-                          <div key={index} className={styles.accoladesBox}>
-                            {this.formatAccolade(accolade)}
-                          </div>
-                        ))
-                      )}
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.leftItemsHolder}>
-                  <div className={styles.summaryLabel}>
-                    <AttachFileIcon></AttachFileIcon> NOTEBOOK
-                  </div>
-                  <div className={styles.summary}>
-                    {this.separateSentencesIntoParagraphs(
-                      this.state.athlete.summary,
+                        ),
+                      )
                     )}
                   </div>
                 </div>
-                <div className={styles.rightContainer}>
-                  <div
-                    onClick={() =>
-                      window.open(this.state.athlete.wikipedia_url)
-                    }
-                    className={styles.openLink}
-                  >
-                    READ MORE
+                <div className={styles.closestCompetitors}>
+                  <div className={styles.label}>PERSONAL BESTS</div>
+                  <div className={styles.competitors}>
+                    {this.state.loadingNewAthlete ? (
+                      <div>
+                        <Skeleton />
+                        <Skeleton />
+                        <Skeleton />
+                      </div>
+                    ) : (
+                      this.state.athlete_pbs.map((data, index) => (
+                        <div key={index} className={styles.competitorNoLink}>
+                          <b style={{ marginRight: "5px" }}>{data.result}</b> -{" "}
+                          {data.discipline}
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
+                <div className={styles.closestCompetitors}>
+                  <div className={styles.label}>ACCOLADES</div>
+                  <div className={styles.competitors}>
+                    {this.state.loadingNewAthlete ? (
+                      <div>
+                        <Skeleton />
+                        <Skeleton />
+                        <Skeleton />
+                      </div>
+                    ) : (
+                      this.state.athlete_accolades.map((accolade, index) => (
+                        <div key={index} className={styles.accoladesBox}>
+                          {this.formatAccolade(accolade)}
+                        </div>
+                      ))
+                    )}
                   </div>
                 </div>
               </div>
+              <div className={styles.leftItemsHolder}>
+                <div className={styles.summaryLabel}>
+                  <AttachFileIcon></AttachFileIcon> NOTEBOOK
+                </div>
+                <div className={styles.summary}>
+                  {this.separateSentencesIntoParagraphs(
+                    this.state.athlete.summary,
+                  )}
+                </div>
+              </div>
+              <div className={styles.rightContainer}>
+                <div
+                  onClick={() => window.open(this.state.athlete.wikipedia_url)}
+                  className={styles.openLink}
+                >
+                  READ MORE
+                </div>
+              </div>
             </div>
-            <AthleteResults
-              athlete={this.state.athlete_data}
-              viewingAthlete={this.state.athlete}
-              loadingNewAthlete={this.state.loadingNewAthlete}
-            />
+          </div>
+          <AthleteResults
+            athlete={this.state.athlete_data}
+            viewingAthlete={this.state.athlete}
+            loadingNewAthlete={this.state.loadingNewAthlete}
+          />
         </div>
       );
     }

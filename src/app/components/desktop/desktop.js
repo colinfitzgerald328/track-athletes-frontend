@@ -77,7 +77,6 @@ export default class DesktopVersion extends React.Component {
     this.fetchRandomAthlete();
   }
 
-
   setAthlete = async (athlete) => {
     this.setState({
       athlete: athlete,

@@ -13,7 +13,7 @@ export default class MainComponent extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.updateWindowDimensions.bind(this));
+    window.addEventListener("resize", this.updateWindowDimensions.bind(this));
     this.updateWindowDimensions();
   }
 

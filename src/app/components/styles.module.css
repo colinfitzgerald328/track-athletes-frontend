@@ -1,16 +1,15 @@
 .mobileMain {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #59252e;
-  }
-  
-  
-  .desktopMain {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #59252e;
+}
+
+.desktopMain {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
