@@ -10,114 +10,6 @@ import styles from "./desktop.module.css";
 export default class DesktopVersion extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      athlete: [],
-      athlete_data: [],
-      athlete_pbs: [],
-      athlete_accolades: [],
-      loadingNewAthlete: false,
-      width: 0,
-      height: 0,
-    };
-  }
-
-  getResultsForAthlete(athlete_id) {
-    return new Promise((resolve, reject) => {
-      API.getResultsForAthlete(
-        athlete_id,
-        (results) => {
-          console.log(results);
-          this.setState({
-            athlete_data: results["athlete_data"],
-          });
-          resolve(results); // Resolve the promise with the data
-        },
-        (error) => {
-          reject(error); // Reject the promise with the error
-        },
-      );
-    });
-  }
-
-  getPBSForAthlete(athlete_id) {
-    return new Promise((resolve, reject) => {
-      API.getPBSForAthlete(
-        athlete_id,
-        (data) => {
-          this.setState({
-            athlete_pbs: data["personal_bests"],
-          });
-          resolve(data); // Resolve the promise with the data
-        },
-        (error) => {
-          reject(error); // Reject the promise with the error
-        },
-      );
-    });
-  }
-
-  getAccoladesForAthlete(url_slug) {
-    return new Promise((resolve, reject) => {
-      API.getAccoladesForAthlete(
-        url_slug,
-        (data) => {
-          this.setState({
-            athlete_accolades: data["accolades"],
-          });
-          resolve(data); // Resolve the promise with the data
-        },
-        (error) => {
-          reject(error); // Reject the promise with the error
-        },
-      );
-    });
-  }
-
-  componentDidMount() {
-    this.fetchRandomAthlete();
-  }
-
-  setAthlete = async (athlete) => {
-    this.setState({
-      athlete: athlete,
-      loadingNewAthlete: true,
-    });
-
-    try {
-      await Promise.all([
-        this.getResultsForAthlete(athlete.aaAthleteId),
-        this.getPBSForAthlete(athlete.aaAthleteId),
-        this.getAccoladesForAthlete(athlete.urlSlug),
-      ]);
-
-      this.setState({
-        loadingNewAthlete: false,
-      });
-    } catch (error) {
-      console.error("Error occurred:", error);
-
-      this.setState({
-        loadingNewAthlete: false,
-      });
-    }
-  };
-
-  fetchRandomAthlete() {
-    API.getRandomDoc((athlete) => {
-      this.setState({
-        athlete: athlete.random_doc,
-      });
-      this.setAthlete(athlete.random_doc);
-    });
-  }
-
-  setAthleteFromTopCompetitors(athlete_id) {
-    API.getAthleteById(athlete_id, (athlete) => {
-      this.setState({
-        athlete: athlete.found_athlete,
-      });
-      this.setAthlete(athlete.found_athlete);
-    });
   }
 
   separateSentencesIntoParagraphs(text) {
@@ -158,45 +50,45 @@ export default class DesktopVersion extends React.Component {
   }
 
   render() {
-    if (this.state.athlete.length === 0) {
+    if (this.props.athlete.length === 0) {
       return <div>Loading...</div>;
-    } else if (this.state.athlete) {
+    } else if (this.props.athlete) {
       return (
         <div className={styles.main}>
           <div className={styles.pageLabel}>athletics hub</div>
           <div className={styles.mainBackground}>
             <SearchBar
-              setAthlete={this.setAthlete.bind(this)}
-              athlete={this.state.athlete}
+              setAthlete={this.props.setAthlete}
+              athlete={this.props.athlete}
             />
             <div className={styles.mainImage}>
               <img
                 className={styles.athleteImage}
-                src={this.state.athlete.hq_image_url}
+                src={this.props.athlete.hq_image_url}
               />
             </div>
             <div className={styles.mainText}>
               <div className={styles.container}>
                 <div className={styles.mainTitle}>
-                  <div>{this.state.athlete.full_name}</div>
+                  <div>{this.props.athlete.full_name}</div>
                   <div className={styles.mainEvents}>
-                    {this.state.athlete.disciplines}
+                    {this.props.athlete.disciplines}
                   </div>
                 </div>
                 <div className={styles.rightContainer}>
                   <div
                     onClick={() =>
-                      window.open(this.state.athlete.wikipedia_url)
+                      window.open(this.props.athlete.wikipedia_url)
                     }
                     className={styles.openLink}
                   >
                     READ MORE
                   </div>
-                  {this.state.athlete.instagram_url && (
+                  {this.props.athlete.instagram_url && (
                     <div className={styles.socialIconHolder}>
                       <img
                         onClick={() =>
-                          window.open(this.state.athlete.instagram_url)
+                          window.open(this.props.athlete.instagram_url)
                         }
                         className={styles.image}
                         src="https://worldathletics.org/static/instagram.svg"
@@ -212,7 +104,7 @@ export default class DesktopVersion extends React.Component {
                   </div>
                   <div className={styles.summary}>
                     {this.separateSentencesIntoParagraphs(
-                      this.state.athlete.summary,
+                      this.props.athlete.summary,
                     )}
                   </div>
                 </div>
@@ -225,14 +117,14 @@ export default class DesktopVersion extends React.Component {
                       COMPETITION
                     </div>
                     <div className={styles.competitorsWithSlightlyLessMargin}>
-                      {this.state.loadingNewAthlete ? (
+                      {this.props.loadingNewAthlete ? (
                         <div>
                           <Skeleton />
                           <Skeleton />
                           <Skeleton />
                         </div>
                       ) : (
-                        this.state.athlete.top_competitors_with_reference.map(
+                        this.props.athlete.top_competitors_with_reference.map(
                           (competitor, index) => (
                             <div
                               key={index}
@@ -260,14 +152,14 @@ export default class DesktopVersion extends React.Component {
                   <div className={styles.closestCompetitors}>
                     <div className={styles.label}>PERSONAL BESTS</div>
                     <div className={styles.competitors}>
-                      {this.state.loadingNewAthlete ? (
+                      {this.props.loadingNewAthlete ? (
                         <div>
                           <Skeleton />
                           <Skeleton />
                           <Skeleton />
                         </div>
                       ) : (
-                        this.state.athlete_pbs.map((data, index) => (
+                        this.props.athlete_pbs.map((data, index) => (
                           <div key={index} className={styles.competitorNoLink}>
                             <b style={{ marginRight: "5px" }}>{data.result}</b>{" "}
                             - {data.discipline}
@@ -279,14 +171,14 @@ export default class DesktopVersion extends React.Component {
                   <div className={styles.closestCompetitors}>
                     <div className={styles.label}>ACCOLADES</div>
                     <div className={styles.competitors}>
-                      {this.state.loadingNewAthlete ? (
+                      {this.props.loadingNewAthlete ? (
                         <div>
                           <Skeleton />
                           <Skeleton />
                           <Skeleton />
                         </div>
                       ) : (
-                        this.state.athlete_accolades.map((accolade, index) => (
+                        this.props.athlete_accolades.map((accolade, index) => (
                           <div key={index} className={styles.accoladesBox}>
                             {this.formatAccolade(accolade)}
                           </div>
@@ -298,9 +190,9 @@ export default class DesktopVersion extends React.Component {
               </div>
             </div>
             <AthleteResults
-              athlete={this.state.athlete_data}
-              viewingAthlete={this.state.athlete}
-              loadingNewAthlete={this.state.loadingNewAthlete}
+              athlete={this.props.athlete_data}
+              viewingAthlete={this.props.athlete}
+              loadingNewAthlete={this.props.loadingNewAthlete}
             />
           </div>
         </div>
