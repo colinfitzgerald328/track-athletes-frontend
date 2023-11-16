@@ -113,7 +113,6 @@ export default function SearchBar(props) {
 
   return (
     <div ref={searchBarRef} className={styles.searchBarPositioner}>
-      <div className={styles.inputContainer}>
         <SearchIcon
           alt="Search"
           className={styles.inputImage}
@@ -134,7 +133,6 @@ export default function SearchBar(props) {
           }}
           onMouseDown={() => getAndSetTop20Results()}
         />
-      </div>
       {searchResults.length > 0 && !loading ? (
         <div ref={searchResultsRef} className={styles.searchResults}>
           {searchResultsMap}

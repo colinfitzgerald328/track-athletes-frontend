@@ -3,7 +3,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 50px;
   align-items: center;
   max-width: 1800px;
   overflow-x: hidden;
@@ -13,11 +12,12 @@
 .pageLabel {
   font-size: 40px;
   font-weight: bold;
-  color: white;
   width: 90%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
   color: #6ac2e6;
   border-radius: 30px;
-  padding: 20px;
 }
 
 .mainBackground {
@@ -109,7 +109,7 @@
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 5px;
-  height: calc(100% - 60px);
+  height: calc(100% - 90px);
   overflow-y: scroll;
 }
 

@@ -113,14 +113,12 @@ export default function SearchBar(props) {
 
   return (
     <div ref={searchBarRef} className={styles.searchBarPositioner}>
-      <div className={styles.inputContainer}>
-        <SearchIcon
+              <SearchIcon
           alt="Search"
           className={styles.inputImage}
           sx={{ marginLeft: 1, fontSize: 30, color: "white" }}
         />
         <input
-          type="text"
           className={
             searchResults.length > 0 || loading
               ? styles.searchBarFocus
@@ -134,7 +132,6 @@ export default function SearchBar(props) {
           }}
           onMouseDown={() => getAndSetTop20Results()}
         />
-      </div>
       {searchResults.length > 0 && !loading ? (
         <div ref={searchResultsRef} className={styles.searchResults}>
           {searchResultsMap}

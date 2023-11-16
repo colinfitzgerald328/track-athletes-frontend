@@ -19,9 +19,7 @@
 }
 
 .mainImage {
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 100%;
+  width: calc(100% - 40px);
 }
 
 .athleteImage {
