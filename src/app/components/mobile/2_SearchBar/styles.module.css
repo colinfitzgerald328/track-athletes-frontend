@@ -1,7 +1,7 @@
 .searchBarPositioner {
   display: flex;
   justify-content: flex-end;
-  margin-top: 20px;
+  margin-top: 10px;
   z-index: 1000;
   width: calc(100% - 0px);
   position: relative;
