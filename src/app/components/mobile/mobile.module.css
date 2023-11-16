@@ -69,6 +69,8 @@
   .leftItemsHolder {
     background-color: #325573;
     border: 1px #f2c288;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
   }
   
   .summaryLabel {
@@ -109,7 +111,7 @@
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 16px;
+    font-size: 20px;
   }
   
   .label {
@@ -158,7 +160,6 @@
   }
   
   .rightContainer {
-    margin-right: 10px;
   }
   
   .image {
@@ -230,14 +231,14 @@
   }
   
   .rightItemsHolder {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
     background-color: #325573;
     border: 1px #f2c288;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
     min-width: 300px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
   }
   
   .competitor {
