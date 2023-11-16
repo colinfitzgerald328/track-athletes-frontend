@@ -164,7 +164,7 @@ export default class DesktopVersion extends React.Component {
     } else if (this.state.athlete) {
       return (
         <div className={styles.main}>
-          <div className={styles.pageLabel}>desktop version</div>
+          <div className={styles.pageLabel}>athletics hub</div>
           <div className={styles.mainBackground}>
             <SearchBar
               setAthlete={this.setAthlete.bind(this)}
