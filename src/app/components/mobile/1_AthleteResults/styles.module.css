@@ -1,6 +1,6 @@
 .tableHolder {
   width: calc(100% - 40px);
-  background-color: #59252e;
+  background-color: #578bb8;  
   height: calc(100% - 450px);
   border-radius: 30px;
   margin-left: 20px;
@@ -52,7 +52,7 @@
   padding-bottom: 15px;
   display: flex;
   color: white;
-  background-color: rgb(187, 110, 110);
+  background-color: #325573;
 }
 
 .singleResultDiff {

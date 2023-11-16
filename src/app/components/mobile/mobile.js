@@ -165,7 +165,6 @@ export default class MobileVersion extends React.Component {
       return (
         <div className={styles.main}>
           <div className={styles.pageLabel}>athletics hub</div>
-          <div className={styles.mainBackground}>
             <SearchBar
               setAthlete={this.setAthlete.bind(this)}
               athlete={this.state.athlete}
@@ -292,7 +291,6 @@ export default class MobileVersion extends React.Component {
               viewingAthlete={this.state.athlete}
               loadingNewAthlete={this.state.loadingNewAthlete}
             />
-          </div>
         </div>
       );
     }

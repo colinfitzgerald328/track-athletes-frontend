@@ -1,6 +1,7 @@
 .main {
     width: 100%;
     height: 100%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     padding-bottom: 50px;
@@ -17,17 +18,8 @@
     width: 90%;
     color: #6ac2e6;
     border-radius: 30px;
-    padding: 20px;
   }
   
-  .mainBackground {
-    height: 90%;
-    width: 90%;
-    border-radius: 40px;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-  }
   
   .mainImage {
     padding-left: 20px;
