@@ -183,16 +183,6 @@ export default class MobileVersion extends React.Component {
                     {this.state.athlete.disciplines}
                   </div>
                 </div>
-                <div className={styles.rightContainer}>
-                  <div
-                    onClick={() =>
-                      window.open(this.state.athlete.wikipedia_url)
-                    }
-                    className={styles.openLink}
-                  >
-                    READ MORE
-                  </div>
-                </div>
               </div>
               <div className={styles.mainSummary}>
                 <div className={styles.rightItemsHolder}>
@@ -282,6 +272,16 @@ export default class MobileVersion extends React.Component {
                     {this.separateSentencesIntoParagraphs(
                       this.state.athlete.summary,
                     )}
+                  </div>
+                </div>
+                <div className={styles.rightContainer}>
+                  <div
+                    onClick={() =>
+                      window.open(this.state.athlete.wikipedia_url)
+                    }
+                    className={styles.openLink}
+                  >
+                    READ MORE
                   </div>
                 </div>
               </div>
