@@ -1,7 +1,7 @@
 .tableHolder {
   width: calc(100% - 40px);
   background-color: #578bb8;  
-  height: calc(100% - 450px);
+  height: 400px;
   border-radius: 30px;
   margin-left: 20px;
   margin-right: 20px;
@@ -75,11 +75,11 @@
 }
 
 .tableHeaderLabelSmall {
-  width: calc(100% / 6);
+  width: calc(100% / 4.6);
 }
 
 .tableHeaderLabelSmallBold {
-  width: calc(100% / 8);
+  width: calc(100% / 6);
   font-weight: bold;
   margin-right: 10px;
 }
