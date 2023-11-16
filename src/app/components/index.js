@@ -1,6 +1,7 @@
 import React from "react";
 import DesktopVersion from "./desktop/desktop";
 import MobileVersion from "./mobile/mobile";
+import styles from "./styles.module.css";
 
 export default class MainComponent extends React.Component {
   constructor(props) {
@@ -22,9 +23,17 @@ export default class MainComponent extends React.Component {
 
   render() {
     if (this.state.width > 1400) {
-      return <DesktopVersion />;
+      return (
+        <div className={styles.desktopMain}>
+          <DesktopVersion />
+        </div>
+      );
     } else {
-      return <MobileVersion />;
+      return (
+        <div className={styles.mobileMain}>
+          <MobileVersion />
+        </div>
+      );
     }
   }
 }

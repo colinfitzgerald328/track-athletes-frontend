@@ -160,7 +160,15 @@ export default class MobileVersion extends React.Component {
 
   render() {
     if (this.state.athlete.length === 0) {
-      return <div>Loading...</div>;
+      return <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          width: "100vw",
+        }}
+      >Loading...</div>;
     } else if (this.state.athlete) {
       return (
         <div className={styles.main}>
