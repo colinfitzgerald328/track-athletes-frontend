@@ -10,6 +10,7 @@
   color: white;
   background-color: #f2c288;
   border-radius: 20px;
+  height: 400px !important;
 }
 
 .customTooltip {
@@ -17,7 +18,7 @@
   border: 1px solid #325573;
   color: white;
   padding: 20px;
-  width: 400px;
+  width: 300px;
   border-radius: 20px;
 }
 
