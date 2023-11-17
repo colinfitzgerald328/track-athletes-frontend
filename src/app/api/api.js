@@ -1,11 +1,11 @@
-var API_URL = "https://python.colinfitzgeral8.repl.co";
+var API_URL = "https://athletics-hub.uc.r.appspot.com";
 
 export async function getResultsForAthlete(athlete_code, callback) {
   var data = {
     athlete_id: athlete_code,
   };
 
-  // hello world
+
 
   var url = new URL(API_URL + "/athletes/results");
   url.search = new URLSearchParams(data).toString();
@@ -18,11 +18,10 @@ export async function getResultsForAthlete(athlete_code, callback) {
       }
     })
     .then((data) => {
-      // TODO Fill in Data
       callback(data);
     })
     .catch((error) => {
-      // toaster.danger("API Error on getting notifications");
+      console.log(error);
     });
 }
 
@@ -30,8 +29,6 @@ export async function getSearchResultsForQuery(search, callback) {
   var data = {
     search_term: search,
   };
-
-  // hello world
 
   var url = new URL(API_URL + "/query/results");
   url.search = new URLSearchParams(data).toString();
@@ -44,11 +41,10 @@ export async function getSearchResultsForQuery(search, callback) {
       }
     })
     .then((data) => {
-      // TODO Fill in Data
       callback(data);
     })
     .catch((error) => {
-      // toaster.danger("API Error on getting notifications");
+      console.log(error);
     });
 }
 
@@ -64,11 +60,10 @@ export async function getRandomDoc(callback) {
       }
     })
     .then((data) => {
-      // TODO Fill in Data
       callback(data);
     })
     .catch((error) => {
-      // toaster.danger("API Error on getting notifications");
+      console.log(error);
     });
 }
 
@@ -84,11 +79,10 @@ export async function getTopRecords(callback) {
       }
     })
     .then((data) => {
-      // TODO Fill in Data
       callback(data);
     })
     .catch((error) => {
-      // toaster.danger("API Error on getting notifications");
+      console.log(error);
     });
 }
 
@@ -96,8 +90,6 @@ export async function getPBSForAthlete(athlete_code, callback) {
   var data = {
     athlete_id: athlete_code,
   };
-
-  // hello world
 
   var url = new URL(API_URL + "/athlete/pbs");
   url.search = new URLSearchParams(data).toString();
@@ -110,11 +102,10 @@ export async function getPBSForAthlete(athlete_code, callback) {
       }
     })
     .then((data) => {
-      // TODO Fill in Data
       callback(data);
     })
     .catch((error) => {
-      // toaster.danger("API Error on getting notifications");
+      console.log(error);
     });
 }
 
@@ -122,8 +113,6 @@ export async function getAccoladesForAthlete(url_slug, callback) {
   var data = {
     url_slug: url_slug,
   };
-
-  // hello world
 
   var url = new URL(API_URL + "/athlete/accolades");
   url.search = new URLSearchParams(data).toString();
@@ -136,11 +125,10 @@ export async function getAccoladesForAthlete(url_slug, callback) {
       }
     })
     .then((data) => {
-      // TODO Fill in Data
       callback(data);
     })
     .catch((error) => {
-      // toaster.danger("API Error on getting notifications");
+      console.log(error);
     });
 }
 
@@ -148,8 +136,6 @@ export async function getAthleteById(athlete_id, callback) {
   var data = {
     athlete_id: athlete_id,
   };
-
-  // hello world
 
   var url = new URL(API_URL + "/athlete/byId");
   url.search = new URLSearchParams(data).toString();
@@ -162,12 +148,9 @@ export async function getAthleteById(athlete_id, callback) {
       }
     })
     .then((data) => {
-      // TODO Fill in Data
       callback(data);
     })
     .catch((error) => {
-      // toaster.danger("API Error on getting notifications");
+      console.log(error);
     });
 }
-
-///query/top
