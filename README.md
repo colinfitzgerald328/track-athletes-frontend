@@ -1,15 +1,18 @@
 ## Athletics Hub
 
-https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/ed0693e4-0d1f-434f-ab59-20076b5ba8aa
+
+
+https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/d19f4afb-4d4b-4e76-85af-4c6224761ac7
+
+
 
 ### Goal
 
-Built with the track fan in mind, the goal of athletics hub is to to build an all-in-one platform for track and field fans to follow the sport throughout the season.
-We've currently indexed the top 200 male and female athletes in the world and plan to expand this number to all potential competitors in the Paris 2024 Olympics.
+Athletics Hub is a comprehensive platform designed with the track fan in mind. Our goal is to create an all-in-one hub for track and field enthusiasts to stay connected with the sport throughout the season. Currently, we have indexed the top 200 male and female athletes globally and have plans to expand this coverage to include all potential competitors in the Paris 2024 Olympics.
 
 ### The Project
 
-When you search for an athlete, you want to know a couple of things:
+When searching for an athlete, Athletics Hub aims to provide answers to key questions:
 
 1. What are this athlete's main events?
 2. What are this athlete's most recent results?
@@ -18,19 +21,21 @@ When you search for an athlete, you want to know a couple of things:
 5. What are this athlete's personal bests?
 6. What are this athlete's most notable accomplishments?
 
-- While this information is available in a google search, myself and others commonly find that the auto-generated summaries from Wikipedia are too short, there is no live results stream available and that the information is not tailored to a track fan's desires. (think: accolades, personal bests)
+While this information is available through a Google search, our project addresses common issues such as short auto-generated summaries, the lack of a live results stream, and information not tailored to a track fan's desires. This involves generating descriptive summaries by utilizing data from Instagram and Wikipedia profiles, extracting and employing generative language models for coherent and well-written summaries. Additionally, we collect and display data from World Athletics in a visual format for easy tracking of your favorite athletes.
 
-- This project involves generating descriptive summaries by utilizing data from Instagram and Wikipedia profiles of athletes. The process includes extracting information from these sources and then employing generative language models to generate coherent and well-written summaries. In addition, we collect and propogate data from World Athletics into a visual data display, making it easy and simplistic to stay up to date on your favorite athletes.
+### Key Features
 
-Key features of the project include:
+- Live stream displaying the athlete's most recent results
+- Athlete summary with personal bests and accolades
+- List of the athlete's top 3 competitors
+- Links to social media profiles (Instagram implemented, others in development)
+- Performance graph for the current year
 
-- The ability to access a live stream displaying the athlete's most recent results
-- A summary of the athlete and their accomplishments, including personal bests and accolades
-- A list of their top 3 competitors
-- Links to their social media profiles (Instagram done, others in development)
-- A graph of the athlete's performances for the current year
+### Additional Information
+
+- This is a fully responsive web application.
 
 ### Credit
 
-- Credit to Instagram, Wikipedia, and WorldAthletics for providing the data used in supporting this project.
-- The technical stack used for this project includes NoSQL (MongoDB), Flask via Replit and Next.js/Vercel for hosting and deployment.
+- Special thanks to Instagram, Wikipedia, and World Athletics for providing the data that supports this project.
+- Technical stack: NoSQL (MongoDB), Flask via Replit, and Next.js/Vercel for hosting and deployment.
