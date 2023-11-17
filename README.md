@@ -1,14 +1,6 @@
 ## Athletics Hub
 
-
-
-
-
 https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/8ae06bd9-eedd-4fd7-9f5b-6330b6692f40
-
-
-
-
 
 ### Goal
 

@@ -113,25 +113,25 @@ export default function SearchBar(props) {
 
   return (
     <div ref={searchBarRef} className={styles.searchBarPositioner}>
-              <SearchIcon
-          alt="Search"
-          className={styles.inputImage}
-          sx={{ marginLeft: 1, fontSize: 30, color: "white" }}
-        />
-        <input
-          className={
-            searchResults.length > 0 || loading
-              ? styles.searchBarFocus
-              : styles.searchBar
-          }
-          placeholder="Search for an athlete..."
-          value={searchTerm}
-          onChange={(event) => {
-            handleInputChange(event);
-            setSearchTerm(event.target.value);
-          }}
-          onMouseDown={() => getAndSetTop20Results()}
-        />
+      <SearchIcon
+        alt="Search"
+        className={styles.inputImage}
+        sx={{ marginLeft: 1, fontSize: 30, color: "white" }}
+      />
+      <input
+        className={
+          searchResults.length > 0 || loading
+            ? styles.searchBarFocus
+            : styles.searchBar
+        }
+        placeholder="Search for an athlete..."
+        value={searchTerm}
+        onChange={(event) => {
+          handleInputChange(event);
+          setSearchTerm(event.target.value);
+        }}
+        onMouseDown={() => getAndSetTop20Results()}
+      />
       {searchResults.length > 0 && !loading ? (
         <div ref={searchResultsRef} className={styles.searchResults}>
           {searchResultsMap}

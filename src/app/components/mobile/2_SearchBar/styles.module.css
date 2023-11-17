@@ -21,8 +21,6 @@
   padding-left: 50px;
 }
 
-
-
 .searchBar:focus {
   outline: none;
 }
@@ -61,8 +59,6 @@
 
 .searchBarText {
 }
-
-
 
 .inputImage {
   position: absolute;

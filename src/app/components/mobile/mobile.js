@@ -70,7 +70,8 @@ export default class MobileVersion extends React.Component {
         </div>
       );
     } else if (this.props.athlete) {
-      const firstThreeAccomplishments = this.props.athlete.accomplishments.slice(0, 3);
+      const firstThreeAccomplishments =
+        this.props.athlete.accomplishments.slice(0, 3);
       return (
         <div className={styles.main}>
           <div className={styles.pageLabel}>athletics hub</div>
