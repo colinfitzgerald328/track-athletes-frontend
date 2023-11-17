@@ -8,8 +8,8 @@
 .searchBar {
   border-radius: 30px;
   height: 50px;
-  background-color: #59252e;
-  border: 1px solid #578bb8;
+  background-color: #578bb8;
+  border: 1px solid transparent;
   color: white;
   font-size: 20px;
   display: flex;
@@ -30,8 +30,8 @@
 .searchBarFocus {
   border-radius: 30px;
   height: 50px;
-  background-color: #59252e;
-  border: 1px solid #578bb8;
+  background-color: #578bb8;
+  border: 1px solid transparent;
   color: white;
   font-size: 20px;
   border-bottom-left-radius: 0px;
@@ -73,15 +73,16 @@
 
 .searchResults {
   position: absolute;
-  background-color: #59252e;
+  background-color: #578bb8;
+  border-top: 0.5px solid #325573;
   height: 300px;
   width: 100%;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
   overflow-y: scroll;
-  border: 1px solid #578bb8;
   overflow-y: scroll;
   box-sizing: border-box;
+  filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.5));
 }
 
 .searchResults::-webkit-scrollbar {
@@ -95,7 +96,7 @@
 }
 
 .singleResult:hover {
-  background-color: #578bb8;
+  background-color: #325573;
   cursor: pointer;
   transition: 0.5s;
 }
@@ -106,6 +107,7 @@
 
 .athleteImage {
   width: 100px;
+  height: 80px;
   object-fit: cover;
   border-radius: 10px;
 }
