@@ -5,8 +5,6 @@ export async function getResultsForAthlete(athlete_code, callback) {
     athlete_id: athlete_code,
   };
 
-
-
   var url = new URL(API_URL + "/athletes/results");
   url.search = new URLSearchParams(data).toString();
   fetch(url)

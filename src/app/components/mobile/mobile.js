@@ -70,6 +70,7 @@ export default class MobileVersion extends React.Component {
         </div>
       );
     } else if (this.props.athlete) {
+      const firstThreeAccomplishments = this.props.athlete.accomplishments.slice(0, 3);
       return (
         <div className={styles.main}>
           <div className={styles.pageLabel}>athletics hub</div>
@@ -163,7 +164,7 @@ export default class MobileVersion extends React.Component {
                         <Skeleton />
                       </div>
                     ) : (
-                      this.props.athlete_accolades.map((accolade, index) => (
+                      firstThreeAccomplishments.map((accolade, index) => (
                         <div key={index} className={styles.accoladesBox}>
                           {this.formatAccolade(accolade)}
                         </div>

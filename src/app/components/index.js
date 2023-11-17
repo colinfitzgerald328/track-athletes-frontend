@@ -86,7 +86,6 @@ export default class MainComponent extends React.Component {
       await Promise.all([
         this.getResultsForAthlete(athlete.aaAthleteId),
         this.getPBSForAthlete(athlete.aaAthleteId),
-        this.getAccoladesForAthlete(athlete.urlSlug),
       ]);
 
       this.setState({
@@ -132,7 +131,7 @@ export default class MainComponent extends React.Component {
             setAthlete={this.setAthlete.bind(this)}
             athlete_data={this.state.athlete_data}
             athlete_pbs={this.state.athlete_pbs}
-            athlete_accolades={this.state.athlete_accolades}
+            athlete_accolades={this.state.athlete.accomplishments}
             loadingNewAthlete={this.state.loadingNewAthlete}
             setAthleteFromTopCompetitors={this.setAthleteFromTopCompetitors.bind(this)}
           />
@@ -146,7 +145,7 @@ export default class MainComponent extends React.Component {
             setAthlete={this.setAthlete.bind(this)}
             athlete_data={this.state.athlete_data}
             athlete_pbs={this.state.athlete_pbs}
-            athlete_accolades={this.state.athlete_accolades}
+            athlete_accolades={this.state.athlete.accomplishments}
             loadingNewAthlete={this.state.loadingNewAthlete}
             setAthleteFromTopCompetitors={this.setAthleteFromTopCompetitors.bind(this)}
           />
