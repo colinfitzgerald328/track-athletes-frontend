@@ -7,6 +7,7 @@ export default function Similar(props) {
       <div
         className={styles.similarObjectContainer}
         onClick={() => props.setAthlete(athlete)}
+        key={athlete.aaAthleteId}
       >
         <img className={styles.similarImage} src={athlete.hq_image_url} />
         <div className={styles.similarName}>{athlete.full_name}</div>
