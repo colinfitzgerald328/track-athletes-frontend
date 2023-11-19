@@ -40,7 +40,6 @@ export default function GraphModal(props) {
     .reverse();
 
   const CustomTooltip = ({ active, payload }) => {
-    console.log(payload);
     if (active && payload && payload.length) {
       return (
         <div className={styles.customTooltip}>

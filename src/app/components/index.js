@@ -12,6 +12,7 @@ export default class MainComponent extends React.Component {
       athlete_data: [],
       athlete_pbs: [],
       athlete_accolades: [],
+      similar_athletes: [],
       width: 0,
       height: 0,
       pageLoaded: false,
@@ -29,7 +30,6 @@ export default class MainComponent extends React.Component {
       API.getResultsForAthlete(
         athlete_id,
         (results) => {
-          console.log(results);
           this.setState({
             athlete_data: results["athlete_data"],
           });
@@ -86,6 +86,7 @@ export default class MainComponent extends React.Component {
       await Promise.all([
         this.getResultsForAthlete(athlete.aaAthleteId),
         this.getPBSForAthlete(athlete.aaAthleteId),
+        this.getSimilarAthletes(athlete.aaAthleteId, athlete.summary),
       ]);
 
       this.setState({
@@ -122,6 +123,21 @@ export default class MainComponent extends React.Component {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
+  getSimilarAthletes(athlete_id, summary) {
+    API.getSimilarAthletes(
+      athlete_id, 
+      summary,
+      (data) => {
+        this.setState({
+          similar_athletes: data["similar_athletes"],
+        });
+      },
+      (error) => {
+        console.log(error);
+      },
+    );
+  }
+
   render() {
     if (this.state.width > 1400) {
       return (
@@ -136,6 +152,7 @@ export default class MainComponent extends React.Component {
             setAthleteFromTopCompetitors={this.setAthleteFromTopCompetitors.bind(
               this,
             )}
+            similar_athletes={this.state.similar_athletes}
           />
         </div>
       );

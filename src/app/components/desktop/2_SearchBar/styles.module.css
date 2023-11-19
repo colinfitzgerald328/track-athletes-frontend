@@ -1,9 +1,8 @@
 .searchBarPositioner {
   position: absolute;
-  margin-top: 80px;
-  width: calc(100% - 740px);
-  left: 710px;
   z-index: 1000;
+  margin-top: 20px;
+  width: calc(100% - 940px);
 }
 
 .searchBar {

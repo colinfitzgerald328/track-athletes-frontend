@@ -71,7 +71,6 @@ export default function SearchBar(props) {
       setLoading(true);
       setTimeout(() => {
         API.getSearchResultsForQuery(searchTermRef.current, (data) => {
-          console.log(data);
           setSearchResults(data.search_results);
           setLoading(false);
         });

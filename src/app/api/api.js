@@ -152,3 +152,33 @@ export async function getAthleteById(athlete_id, callback) {
       console.log(error);
     });
 }
+
+export async function getSimilarAthletes(athlete_id, summary, callback) {
+  console.log(summary);
+  const options = {
+    method: "POST",
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      summary: summary,
+      athlete_id: athlete_id
+    }),
+  };
+
+  fetch(API_URL + "/athlete/similar", options)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Something went wrong ...");
+      }
+    })
+    .then((data) => {
+      callback(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
