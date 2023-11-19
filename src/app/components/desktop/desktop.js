@@ -61,6 +61,7 @@ export default class DesktopVersion extends React.Component {
           <div className={styles.pageLabel}>athletics hub</div>
           <div className={styles.panelHolder}>
             <div className={styles.mainBackground}>
+              <div className={styles.leftItemsHolder}>
               <SearchBar
                 setAthlete={this.props.setAthlete}
                 athlete={this.props.athlete}
@@ -191,6 +192,7 @@ export default class DesktopVersion extends React.Component {
                     </div>
                   </div>
                 </div>
+              </div>
               </div>
               <div className={styles.mainImage}>
                 <img

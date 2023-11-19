@@ -43,7 +43,6 @@
 }
 
 .mainText {
-  width: calc(100% - 600px);
   height: calc(100% - 100px);
   margin-top: 90px;
   top: 20%;
@@ -320,4 +319,9 @@
 .suggestionPanel {
   height: 100%;
   width: 240px;
+}
+
+.leftItemsHolder {
+  width: calc(100% - 200px);
+  position: relative;
 }

@@ -2,7 +2,7 @@
   position: absolute;
   z-index: 1000;
   margin-top: 20px;
-  width: calc(100% - 940px);
+  width: 100%;
 }
 
 .searchBar {
