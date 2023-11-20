@@ -10,9 +10,26 @@ export default function Similar(props) {
         onClick={() => props.setAthlete(athlete)}
         key={athlete.aaAthleteId}
       >
+        {props.loadingNewAthlete ? (
+        <div className={styles.similarImage}>
+          <Skeleton variant="rectangular" height={150}/>
+        </div>
+        ) : (
         <img className={styles.similarImage} src={athlete.hq_image_url} />
-        <div className={styles.similarName}>{athlete.full_name}</div>
-        <div className={styles.disciplines}>{athlete.disciplines}</div>
+        )}
+        {
+          props.loadingNewAthlete ? (
+            <Skeleton variant="text" width={150} height={40} style={{marginLeft: "10px"}}/>
+          ) : (
+            <div className={styles.similarName}>{athlete.full_name}</div>
+          )}
+          {
+          props.loadingNewAthlete ? (
+            <Skeleton variant="text" width={150} height={20} style={{marginLeft: "10px", marginBottom: "5px"}}/>
+          ) : (
+            <div className={styles.disciplines}>{athlete.disciplines}</div>
+          )
+          }
       </div>
     );
   });
@@ -20,16 +37,7 @@ export default function Similar(props) {
     <div className={styles.container}>
       <h1 className={styles.specialh1}>You might also like...</h1>
       <div className={styles.similarHolder}>
-        {props.loadingNewAthlete ? (
-          <div>
-            <Skeleton height={275} />
-            <Skeleton height={250} />
-            <Skeleton height={250} />
-            <Skeleton height={250} />
-          </div>
-        ) : (
-          similarMap
-        )}
+        {similarMap}
       </div>
     </div>
   );
