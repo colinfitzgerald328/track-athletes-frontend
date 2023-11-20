@@ -62,137 +62,141 @@ export default class DesktopVersion extends React.Component {
           <div className={styles.panelHolder}>
             <div className={styles.mainBackground}>
               <div className={styles.leftItemsHolder}>
-              <SearchBar
-                setAthlete={this.props.setAthlete}
-                athlete={this.props.athlete}
-              />
-              <div className={styles.mainText}>
-                <div className={styles.container}>
-                  <div className={styles.mainTitle}>
-                    <div>{this.props.athlete.full_name}</div>
-                    <div className={styles.mainEvents}>
-                      {this.props.athlete.disciplines}
-                    </div>
-                  </div>
-                  <div className={styles.rightContainer}>
-                    <div
-                      onClick={() =>
-                        window.open(this.props.athlete.wikipedia_url)
-                      }
-                      className={styles.openLink}
-                    >
-                      READ MORE
-                    </div>
-                    {this.props.athlete.instagram_url && (
-                      <div className={styles.socialIconHolder}>
-                        <img
-                          onClick={() =>
-                            window.open(this.props.athlete.instagram_url)
-                          }
-                          className={styles.image}
-                          src="https://worldathletics.org/static/instagram.svg"
-                        />
+                <SearchBar
+                  setAthlete={this.props.setAthlete}
+                  athlete={this.props.athlete}
+                />
+                <div className={styles.mainText}>
+                  <div className={styles.container}>
+                    <div className={styles.mainTitle}>
+                      <div>{this.props.athlete.full_name}</div>
+                      <div className={styles.mainEvents}>
+                        {this.props.athlete.disciplines}
                       </div>
-                    )}
-                  </div>
-                </div>
-                <div className={styles.mainSummary}>
-                  <div className={styles.leftItemsHolder}>
-                    <div className={styles.summaryLabel}>
-                      <AttachFileIcon></AttachFileIcon> NOTEBOOK
                     </div>
-                    <div className={styles.summary}>
-                      {this.separateSentencesIntoParagraphs(
-                        this.props.athlete.summary,
+                    <div className={styles.rightContainer}>
+                      <div
+                        onClick={() =>
+                          window.open(this.props.athlete.wikipedia_url)
+                        }
+                        className={styles.openLink}
+                      >
+                        READ MORE
+                      </div>
+                      {this.props.athlete.instagram_url && (
+                        <div className={styles.socialIconHolder}>
+                          <img
+                            onClick={() =>
+                              window.open(this.props.athlete.instagram_url)
+                            }
+                            className={styles.image}
+                            src="https://worldathletics.org/static/instagram.svg"
+                          />
+                        </div>
                       )}
                     </div>
                   </div>
-                  <div className={styles.rightItemsHolder}>
-                    <div className={styles.closestCompetitors}>
-                      <div className={styles.label}>
-                        <LocalFireDepartmentIcon
-                          sx={{ margin: 0, padding: 0 }}
-                        ></LocalFireDepartmentIcon>
-                        COMPETITION
+                  <div className={styles.mainSummary}>
+                    <div className={styles.leftItemsHolder}>
+                      <div className={styles.summaryLabel}>
+                        <AttachFileIcon></AttachFileIcon> NOTEBOOK
                       </div>
-                      <div className={styles.competitorsWithSlightlyLessMargin}>
-                        {this.props.loadingNewAthlete ? (
-                          <div>
-                            <Skeleton />
-                            <Skeleton />
-                            <Skeleton />
-                          </div>
-                        ) : (
-                          this.props.athlete.top_competitors_with_reference.map(
-                            (competitor, index) => (
+                      <div className={styles.summary}>
+                        {this.separateSentencesIntoParagraphs(
+                          this.props.athlete.summary,
+                        )}
+                      </div>
+                    </div>
+                    <div className={styles.rightItemsHolder}>
+                      <div className={styles.closestCompetitors}>
+                        <div className={styles.label}>
+                          <LocalFireDepartmentIcon
+                            sx={{ margin: 0, padding: 0 }}
+                          ></LocalFireDepartmentIcon>
+                          COMPETITION
+                        </div>
+                        <div
+                          className={styles.competitorsWithSlightlyLessMargin}
+                        >
+                          {this.props.loadingNewAthlete ? (
+                            <div>
+                              <Skeleton />
+                              <Skeleton />
+                              <Skeleton />
+                            </div>
+                          ) : (
+                            this.props.athlete.top_competitors_with_reference.map(
+                              (competitor, index) => (
+                                <div
+                                  key={index}
+                                  className={
+                                    competitor.athlete_id
+                                      ? styles.competitor
+                                      : styles.competitorNoLink
+                                  }
+                                  onClick={() =>
+                                    this.props.setAthleteFromTopCompetitors(
+                                      competitor.athlete_id,
+                                    )
+                                  }
+                                >
+                                  {index + 1}.{" "}
+                                  <b style={{ marginLeft: "5px" }}>
+                                    {this.normalizeName(
+                                      competitor.athlete_name,
+                                    )}
+                                  </b>
+                                </div>
+                              ),
+                            )
+                          )}
+                        </div>
+                      </div>
+                      <div className={styles.closestCompetitors}>
+                        <div className={styles.label}>PERSONAL BESTS</div>
+                        <div className={styles.competitors}>
+                          {this.props.loadingNewAthlete ? (
+                            <div>
+                              <Skeleton />
+                              <Skeleton />
+                              <Skeleton />
+                            </div>
+                          ) : (
+                            this.props.athlete_pbs.map((data, index) => (
                               <div
                                 key={index}
-                                className={
-                                  competitor.athlete_id
-                                    ? styles.competitor
-                                    : styles.competitorNoLink
-                                }
-                                onClick={() =>
-                                  this.props.setAthleteFromTopCompetitors(
-                                    competitor.athlete_id,
-                                  )
-                                }
+                                className={styles.competitorNoLink}
                               >
-                                {index + 1}.{" "}
-                                <b style={{ marginLeft: "5px" }}>
-                                  {this.normalizeName(competitor.athlete_name)}
-                                </b>
+                                <b style={{ marginRight: "5px" }}>
+                                  {data.result}
+                                </b>{" "}
+                                - {data.discipline}
                               </div>
-                            ),
-                          )
-                        )}
+                            ))
+                          )}
+                        </div>
                       </div>
-                    </div>
-                    <div className={styles.closestCompetitors}>
-                      <div className={styles.label}>PERSONAL BESTS</div>
-                      <div className={styles.competitors}>
-                        {this.props.loadingNewAthlete ? (
-                          <div>
-                            <Skeleton />
-                            <Skeleton />
-                            <Skeleton />
-                          </div>
-                        ) : (
-                          this.props.athlete_pbs.map((data, index) => (
-                            <div
-                              key={index}
-                              className={styles.competitorNoLink}
-                            >
-                              <b style={{ marginRight: "5px" }}>
-                                {data.result}
-                              </b>{" "}
-                              - {data.discipline}
+                      <div className={styles.closestCompetitors}>
+                        <div className={styles.label}>ACCOLADES</div>
+                        <div className={styles.competitors}>
+                          {this.props.loadingNewAthlete ? (
+                            <div>
+                              <Skeleton />
+                              <Skeleton />
+                              <Skeleton />
                             </div>
-                          ))
-                        )}
-                      </div>
-                    </div>
-                    <div className={styles.closestCompetitors}>
-                      <div className={styles.label}>ACCOLADES</div>
-                      <div className={styles.competitors}>
-                        {this.props.loadingNewAthlete ? (
-                          <div>
-                            <Skeleton />
-                            <Skeleton />
-                            <Skeleton />
-                          </div>
-                        ) : (
-                          firstThreeAccomplishments.map((accolade, index) => (
-                            <div key={index} className={styles.accoladesBox}>
-                              {this.formatAccolade(accolade)}
-                            </div>
-                          ))
-                        )}
+                          ) : (
+                            firstThreeAccomplishments.map((accolade, index) => (
+                              <div key={index} className={styles.accoladesBox}>
+                                {this.formatAccolade(accolade)}
+                              </div>
+                            ))
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
               </div>
               <div className={styles.mainImage}>
                 <img

@@ -125,7 +125,7 @@ export default class MainComponent extends React.Component {
 
   getSimilarAthletes(athlete_id, summary) {
     API.getSimilarAthletes(
-      athlete_id, 
+      athlete_id,
       summary,
       (data) => {
         this.setState({

@@ -163,7 +163,7 @@ export async function getSimilarAthletes(athlete_id, summary, callback) {
     },
     body: JSON.stringify({
       summary: summary,
-      athlete_id: athlete_id
+      athlete_id: athlete_id,
     }),
   };
 

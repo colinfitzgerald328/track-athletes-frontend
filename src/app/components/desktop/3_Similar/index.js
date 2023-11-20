@@ -20,26 +20,16 @@ export default function Similar(props) {
     <div className={styles.container}>
       <h1 className={styles.specialh1}>You might also like...</h1>
       <div className={styles.similarHolder}>
-        {
-          props.loadingNewAthlete ? (
-            <div>
-              <Skeleton
-              height={275}
-              />
-              <Skeleton
-              height={250}
-              />
-              <Skeleton
-              height={250}
-              />
-                            <Skeleton
-              height={250}
-              />
-            </div>
-          ) : (
-            similarMap
-          )
-        }
+        {props.loadingNewAthlete ? (
+          <div>
+            <Skeleton height={275} />
+            <Skeleton height={250} />
+            <Skeleton height={250} />
+            <Skeleton height={250} />
+          </div>
+        ) : (
+          similarMap
+        )}
       </div>
     </div>
   );
