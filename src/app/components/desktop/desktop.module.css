@@ -37,7 +37,7 @@
 .athleteImage {
   border-radius: 40px;
   width: calc(100% - 10px);
-  max-height: 300px;
+  height: 300px;
   object-fit: cover;
   padding-left: 10px;
 }
