@@ -1,6 +1,10 @@
 ## Athletics Hub
 
-https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/8ae06bd9-eedd-4fd7-9f5b-6330b6692f40
+
+
+https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/47b1014f-f1f6-4ffb-a94a-6855fcca4aad
+
+
 
 ### Goal
 
@@ -34,4 +38,5 @@ While this information is available through a Google search, our project address
 ### Credit
 
 - Special thanks to Instagram, Wikipedia, and World Athletics for providing the data that supports this project.
-- Technical stack: NoSQL (MongoDB), Flask via Replit, and Next.js/Vercel for hosting and deployment.
+- Technical stack: NoSQL (MongoDB), Flask Server on Google App Engine, Amazon EC2 Micro-VM, Next.js/Vercel for hosting and deployment.
+
