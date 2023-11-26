@@ -61,7 +61,14 @@ export default class DesktopVersion extends React.Component {
         for (var i = 0; i < socialMediaUrls.length; i++) {
           if (socialMediaUrls[i].twitter_url) {
             twitterUrl = socialMediaUrls[i].twitter_url;
-            break; // Stop the loop once the Twitter URL is found
+            break;
+          }
+        }
+        var instagramUrl;
+        for (var i = 0; i < socialMediaUrls.length; i++) {
+          if (socialMediaUrls[i].instagram_url) {
+            instagramUrl = socialMediaUrls[i].instagram_url;
+            break;
           }
         }
       return (
@@ -103,11 +110,11 @@ export default class DesktopVersion extends React.Component {
                           />
                         </div>
                       )}
-                      {this.props.athlete.instagram_url && (
+                      {instagramUrl && (
                         <div className={styles.socialIconHolder}>
                           <img
                             onClick={() =>
-                              window.open(this.props.athlete.instagram_url)
+                              window.open(instagramUrl)
                             }
                             className={styles.image}
                             src="https://worldathletics.org/static/instagram.svg"
