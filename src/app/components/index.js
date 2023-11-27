@@ -84,7 +84,7 @@ export default class MainComponent extends React.Component {
     try {
       await Promise.all([
         this.getResultsForAthlete(athlete.aaAthleteId),
-        this.getSimilarAthletes(athlete.aaAthleteId, athlete.summary),
+        this.getSimilarAthletes(athlete.aaAthleteId),
       ]);
 
       this.setState({
@@ -121,10 +121,9 @@ export default class MainComponent extends React.Component {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
-  getSimilarAthletes(athlete_id, summary) {
+  getSimilarAthletes(athlete_id) {
     API.getSimilarAthletes(
       athlete_id,
-      summary,
       (data) => {
         this.setState({
           similar_athletes: data["similar_athletes"],

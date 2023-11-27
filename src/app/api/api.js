@@ -153,8 +153,7 @@ export async function getAthleteById(athlete_id, callback) {
     });
 }
 
-export async function getSimilarAthletes(athlete_id, summary, callback) {
-  console.log(summary);
+export async function getSimilarAthletes(athlete_id, callback) {
   const options = {
     method: "POST",
     headers: {
@@ -162,7 +161,6 @@ export async function getSimilarAthletes(athlete_id, summary, callback) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      summary: summary,
       athlete_id: athlete_id,
     }),
   };
