@@ -8,7 +8,7 @@ https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/47b1014f-f1f
 
 ### Goal
 
-Athletics Hub is a comprehensive platform designed with the track fan in mind. Our goal is to create an all-in-one hub for track and field enthusiasts to stay connected with the sport throughout the season. Currently, we have indexed the top 200 male and female athletes globally and have plans to expand this coverage to include all potential competitors in the Paris 2024 Olympics.
+Athletics Hub is a comprehensive platform designed with the track fan in mind. Our goal is to create an all-in-one hub for track and field enthusiasts to stay connected with the sport throughout the season. Currently, we have indexed the top 500 male and female athletes globally and have plans to expand this coverage to include all potential competitors in the Paris 2024 Olympics.
 
 ### The Project
 
@@ -28,7 +28,7 @@ While this information is available through a Google search, our project address
 - Live stream displaying the athlete's most recent results
 - Athlete summary with personal bests and accolades
 - List of the athlete's top 3 competitors
-- Links to social media profiles (Instagram implemented, others in development)
+- Links to social media profiles (Instagram, Twitter, Facebook)
 - Performance graph for the current year
 
 ### Additional Information
