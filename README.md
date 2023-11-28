@@ -28,7 +28,7 @@ While this information is available through a Google search, our project address
 - Live stream displaying the athlete's most recent results
 - Athlete summary with personal bests and accolades
 - List of the athlete's top 3 competitors
-- Links to social media profiles (Instagram, Twitter, Facebook)
+- Links to social media profiles (Instagram and Twitter)
 - Performance graph for the current year
 
 ### Additional Information
