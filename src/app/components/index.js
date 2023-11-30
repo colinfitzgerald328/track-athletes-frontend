@@ -122,17 +122,21 @@ export default class MainComponent extends React.Component {
   }
 
   getSimilarAthletes(athlete_id) {
-    API.getSimilarAthletes(
-      athlete_id,
-      (data) => {
-        this.setState({
-          similar_athletes: data["similar_athletes"],
-        });
-      },
-      (error) => {
-        console.log(error);
-      },
-    );
+    return new Promise((resolve, reject) => {
+      API.getSimilarAthletes(
+        athlete_id,
+        (data) => {
+          this.setState({
+            similar_athletes: data["similar_athletes"],
+          });
+          resolve(data); // Resolve the promise with the data
+        },
+        (error) => {
+          console.log(error);
+          reject(error); // Reject the promise with the error
+        },
+      );
+    });
   }
 
   render() {
