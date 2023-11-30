@@ -56,21 +56,21 @@ export default class DesktopVersion extends React.Component {
     } else if (this.props.athlete) {
       const firstThreeAccomplishments =
         this.props.athlete.accomplishments.slice(0, 3);
-        var twitterUrl;
-        var socialMediaUrls = this.props.athlete.social_urls;
-        for (var i = 0; i < socialMediaUrls.length; i++) {
-          if (socialMediaUrls[i].twitter_url) {
-            twitterUrl = socialMediaUrls[i].twitter_url;
-            break;
-          }
+      var twitterUrl;
+      var socialMediaUrls = this.props.athlete.social_urls;
+      for (var i = 0; i < socialMediaUrls.length; i++) {
+        if (socialMediaUrls[i].twitter_url) {
+          twitterUrl = socialMediaUrls[i].twitter_url;
+          break;
         }
-        var instagramUrl;
-        for (var i = 0; i < socialMediaUrls.length; i++) {
-          if (socialMediaUrls[i].instagram_url) {
-            instagramUrl = socialMediaUrls[i].instagram_url;
-            break;
-          }
+      }
+      var instagramUrl;
+      for (var i = 0; i < socialMediaUrls.length; i++) {
+        if (socialMediaUrls[i].instagram_url) {
+          instagramUrl = socialMediaUrls[i].instagram_url;
+          break;
         }
+      }
       return (
         <div className={styles.main}>
           <div className={styles.pageLabel}>athletics hub</div>
@@ -99,28 +99,24 @@ export default class DesktopVersion extends React.Component {
                         READ MORE
                       </div>
                       <div className={styles.socialIconHolder}>
-                      {twitterUrl && (
-                        <div className={styles.socialIconHolder}>
-                          <img
-                            onClick={() =>
-                              window.open(twitterUrl)
-                            }
-                            className={styles.image}
-                            src="https://worldathletics.org/static/twitter.svg"
-                          />
-                        </div>
-                      )}
-                      {instagramUrl && (
-                        <div className={styles.socialIconHolder}>
-                          <img
-                            onClick={() =>
-                              window.open(instagramUrl)
-                            }
-                            className={styles.image}
-                            src="https://worldathletics.org/static/instagram.svg"
-                          />
-                        </div>
-                      )}
+                        {twitterUrl && (
+                          <div className={styles.socialIconHolder}>
+                            <img
+                              onClick={() => window.open(twitterUrl)}
+                              className={styles.image}
+                              src="https://worldathletics.org/static/twitter.svg"
+                            />
+                          </div>
+                        )}
+                        {instagramUrl && (
+                          <div className={styles.socialIconHolder}>
+                            <img
+                              onClick={() => window.open(instagramUrl)}
+                              className={styles.image}
+                              src="https://worldathletics.org/static/instagram.svg"
+                            />
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
