@@ -137,30 +137,28 @@ export default class MobileVersion extends React.Component {
                   </div>
                 </div>
                 <div className={styles.closestCompetitors}>
-                        <div className={styles.label}>PERSONAL BESTS</div>
-                        <div className={styles.competitors}>
-                          {this.props.loadingNewAthlete ? (
-                            <div>
-                              <Skeleton />
-                              <Skeleton />
-                              <Skeleton />
-                            </div>
-                          ) : (
-                            this.props.athlete_pbs.map((data, index) =>
-                              data.length === 0 ? null : (
-                                <div key={index} className={styles.pbHolder}>
-                                  <div className={styles.pbMark}>
-                                    {data.result}
-                                  </div>
-                                  <div className={styles.pbEvent}>
-                                    {data.discipline}
-                                  </div>
-                                </div>
-                              ),
-                            )
-                          )}
-                        </div>
+                  <div className={styles.label}>PERSONAL BESTS</div>
+                  <div className={styles.competitors}>
+                    {this.props.loadingNewAthlete ? (
+                      <div>
+                        <Skeleton />
+                        <Skeleton />
+                        <Skeleton />
                       </div>
+                    ) : (
+                      this.props.athlete_pbs.map((data, index) =>
+                        data.length === 0 ? null : (
+                          <div key={index} className={styles.pbHolder}>
+                            <div className={styles.pbMark}>{data.result}</div>
+                            <div className={styles.pbEvent}>
+                              {data.discipline}
+                            </div>
+                          </div>
+                        ),
+                      )
+                    )}
+                  </div>
+                </div>
                 <div className={styles.closestCompetitors}>
                   <div className={styles.label}>ACCOLADES</div>
                   <div className={styles.competitors}>
