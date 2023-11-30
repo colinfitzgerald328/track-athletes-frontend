@@ -202,23 +202,28 @@ export default class DesktopVersion extends React.Component {
                         </div>
                       </div>
                       <div className={styles.closestCompetitors}>
-                        <div className={styles.label}>ACCOLADES</div>
-                        <div className={styles.competitors}>
-                          {this.props.loadingNewAthlete ? (
-                            <div>
-                              <Skeleton />
-                              <Skeleton />
-                              <Skeleton />
-                            </div>
-                          ) : (
-                            firstThreeAccomplishments.map((accolade, index) => (
-                              <div key={index} className={styles.accoladesBox}>
-                                {this.formatAccolade(accolade)}
-                              </div>
-                            ))
-                          )}
-                        </div>
-                      </div>
+  {firstThreeAccomplishments.length === 0 ? null : (
+    <>
+      <div className={styles.label}>ACCOLADES</div>
+      <div className={styles.competitors}>
+        {this.props.loadingNewAthlete ? (
+          <div>
+            <Skeleton />
+            <Skeleton />
+            <Skeleton />
+          </div>
+        ) : (
+          firstThreeAccomplishments.map((accolade, index) => (
+            <div key={index} className={styles.accoladesBox}>
+              {this.formatAccolade(accolade)}
+            </div>
+          ))
+        )}
+      </div>
+    </>
+  )}
+</div>
+
                     </div>
                   </div>
                 </div>
