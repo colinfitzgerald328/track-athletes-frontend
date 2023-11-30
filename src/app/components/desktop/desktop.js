@@ -186,7 +186,7 @@ export default class DesktopVersion extends React.Component {
                               <Skeleton />
                             </div>
                           ) : (
-                            this.props.athlete_pbs.map((data, index) => (
+                            this.props.athlete_pbs.map((data, index) =>
                               data.length === 0 ? null : (
                                 <div key={index} className={styles.pbHolder}>
                                   <div className={styles.pbMark}>
@@ -196,34 +196,38 @@ export default class DesktopVersion extends React.Component {
                                     {data.discipline}
                                   </div>
                                 </div>
-                              )
-                            ))
+                              ),
+                            )
                           )}
                         </div>
                       </div>
                       <div className={styles.closestCompetitors}>
-  {firstThreeAccomplishments.length === 0 ? null : (
-    <>
-      <div className={styles.label}>ACCOLADES</div>
-      <div className={styles.competitors}>
-        {this.props.loadingNewAthlete ? (
-          <div>
-            <Skeleton />
-            <Skeleton />
-            <Skeleton />
-          </div>
-        ) : (
-          firstThreeAccomplishments.map((accolade, index) => (
-            <div key={index} className={styles.accoladesBox}>
-              {this.formatAccolade(accolade)}
-            </div>
-          ))
-        )}
-      </div>
-    </>
-  )}
-</div>
-
+                        {firstThreeAccomplishments.length === 0 ? null : (
+                          <>
+                            <div className={styles.label}>ACCOLADES</div>
+                            <div className={styles.competitors}>
+                              {this.props.loadingNewAthlete ? (
+                                <div>
+                                  <Skeleton />
+                                  <Skeleton />
+                                  <Skeleton />
+                                </div>
+                              ) : (
+                                firstThreeAccomplishments.map(
+                                  (accolade, index) => (
+                                    <div
+                                      key={index}
+                                      className={styles.accoladesBox}
+                                    >
+                                      {this.formatAccolade(accolade)}
+                                    </div>
+                                  ),
+                                )
+                              )}
+                            </div>
+                          </>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
