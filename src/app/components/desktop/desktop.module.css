@@ -284,6 +284,29 @@
   padding-left: 10px;
 }
 
+.pbHolder {
+  align-items: center;
+  font-weight: 400;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-top: 8px;
+  margin-bottom: 5.5px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color:#59252e;
+}
+
+.pbMark {
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.pbEvent {
+  font-size: 12px;
+}
+
 .accoladesBox {
   display: flex;
   align-items: center;

@@ -187,15 +187,16 @@ export default class DesktopVersion extends React.Component {
                             </div>
                           ) : (
                             this.props.athlete_pbs.map((data, index) => (
-                              <div
-                                key={index}
-                                className={styles.competitorNoLink}
-                              >
-                                <b style={{ marginRight: "5px" }}>
-                                  {data.result}
-                                </b>{" "}
-                                - {data.discipline}
-                              </div>
+                              data.length === 0 ? null : (
+                                <div key={index} className={styles.pbHolder}>
+                                  <div className={styles.pbMark}>
+                                    {data.result}
+                                  </div>
+                                  <div className={styles.pbEvent}>
+                                    {data.discipline}
+                                  </div>
+                                </div>
+                              )
                             ))
                           )}
                         </div>
