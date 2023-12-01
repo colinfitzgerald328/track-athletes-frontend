@@ -17,7 +17,7 @@ When searching for an athlete, Athletics Hub aims to provide answers to key ques
 5. What are this athlete's personal bests?
 6. What are this athlete's most notable accomplishments?
 
-While this information is available through a Google search, our project addresses common issues such as short auto-generated summaries, the lack of a live results stream, and information not tailored to a track fan's desires. This involves generating descriptive summaries by utilizing data from Instagram and Wikipedia profiles, extracting and employing generative language models for coherent and well-written summaries. Additionally, we collect and display data from World Athletics in a visual format for easy tracking of your favorite athletes.
+While this information is available through a Google search, our project addresses common issues such as short auto-generated summaries, the lack of a live results stream, and information not tailored to a track fan's desires. This involves generating descriptive summaries by utilizing data from Instagram and Wikipedia profiles, which are then fed into generative language models, resulting in coherent and well-written summaries. Additionally, we collect and display data from World Athletics in a visual format for easy tracking of your favorite athletes.
 
 ### Key Features
 
@@ -27,9 +27,21 @@ While this information is available through a Google search, our project address
 - Links to social media profiles (Instagram and Twitter)
 - Performance graph for the current year
 
-### Additional Information
 
-- This is a fully responsive web application.
+### Challenges Addressed
+
+- **Scalability:** Devised and implemented efficient scaling strategies to optimize system performance, carefully balancing database storage and app engine instance memory usage.
+- **Cost Optimization:** Conducted thorough exploration across multiple cloud service providers to manage and curtail system expenses, ensuring that the system can run for free. 
+- **Error Management:** Implemented an exhaustive logging system within the virtual machine to actively monitor system health, swiftly identify potential issues, and mitigate code failures.
+- **Enhancing Page Load Speed:** Initially encountered prolonged page loading times due to real-time data retrieval. Subsequently overhauled the system architecture to enable data streaming and updates at intervals via a virtual machine. This transformation significantly reduced athlete data retrieval times from approximately 2 seconds to an impressive ~170ms.
+
+
+### Key Accomplishments
+
+- Successful redesign achieving a significant reduction in athlete data retrieval time.
+- Ongoing efforts to further optimize athlete result fetch times and improve query efficiency for stored embeddings (leveraging Pinecone indexing).
+
+The project now operates more efficiently, effectively balancing costs while significantly enhancing performance.
 
 ### Credit
 
