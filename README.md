@@ -17,7 +17,7 @@ When searching for an athlete, Athletics Hub aims to provide answers to key ques
 5. What are this athlete's personal bests?
 6. What are this athlete's most notable accomplishments?
 
-While this information is available through a Google search, our project addresses common issues such as short auto-generated summaries, the lack of a live results stream, and information not tailored to a track fan's desires. This involves generating descriptive summaries by utilizing data from Instagram and Wikipedia profiles, extracting and employing generative language models for coherent and well-written summaries. Additionally, we collect and display data from World Athletics in a visual format for easy tracking of your favorite athletes.
+While this information is available through a Google search, our project addresses common issues such as short auto-generated summaries, the lack of a live results stream, and information not tailored to a track fan's desires. This involves generating descriptive summaries by utilizing data from Instagram and Wikipedia profiles, which are then fed into generative language models, resulting in coherent and well-written summaries. Additionally, we collect and display data from World Athletics in a visual format for easy tracking of your favorite athletes.
 
 ### Key Features
 
