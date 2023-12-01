@@ -27,9 +27,21 @@ While this information is available through a Google search, our project address
 - Links to social media profiles (Instagram and Twitter)
 - Performance graph for the current year
 
-### Additional Information
 
-- This is a fully responsive web application.
+### Challenges Addressed
+
+- **Scalability:** Devised and implemented efficient scaling strategies to optimize system performance, carefully balancing database storage and app engine instance memory usage.
+- **Cost Optimization:** Conducted thorough exploration across multiple cloud service providers to manage and curtail system expenses, ensuring that the system can run for free. 
+- **Error Management:** Implemented an exhaustive logging system within the virtual machine to actively monitor system health, swiftly identify potential issues, and mitigate code failures.
+- **Enhancing Page Load Speed:** Initially encountered prolonged page loading times due to real-time data retrieval. Subsequently overhauled the system architecture to enable data streaming and updates at intervals via a virtual machine. This transformation significantly reduced athlete data retrieval times from approximately 2 seconds to an impressive ~170ms.
+
+
+### Key Accomplishments
+
+- Successful redesign achieving a significant reduction in athlete data retrieval time.
+- Ongoing efforts to further optimize athlete result fetch times and improve query efficiency for stored embeddings (leveraging Pinecone indexing).
+
+The project now operates more efficiently, effectively balancing costs while significantly enhancing performance.
 
 ### Credit
 
