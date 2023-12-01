@@ -203,13 +203,13 @@ export default class MobileVersion extends React.Component {
             viewingAthlete={this.props.athlete}
             loadingNewAthlete={this.props.loadingNewAthlete}
           />
-                      <div className={styles.suggestionPanel}>
-              <Similar
-                similar_athletes={this.props.similar_athletes}
-                setAthlete={this.props.setAthlete}
-                loadingNewAthlete={this.props.loadingNewAthlete}
-              ></Similar>
-            </div>
+          <div className={styles.suggestionPanel}>
+            <Similar
+              similar_athletes={this.props.similar_athletes}
+              setAthlete={this.props.setAthlete}
+              loadingNewAthlete={this.props.loadingNewAthlete}
+            ></Similar>
+          </div>
         </div>
       );
     }
