@@ -304,3 +304,8 @@
   padding: 10px;
   padding-top: 12.5px;
 }
+
+.suggestionPanel {
+  width: calc(100% - 40px);
+  margin-top: 10px;
+}

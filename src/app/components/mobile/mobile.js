@@ -1,7 +1,7 @@
 import React from "react";
-import * as API from "src/app/api/api.js";
 import AthleteResults from "./1_AthleteResults";
 import SearchBar from "./2_SearchBar";
+import Similar from "./3_Similar";
 import Skeleton from "@mui/material/Skeleton";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
@@ -203,6 +203,13 @@ export default class MobileVersion extends React.Component {
             viewingAthlete={this.props.athlete}
             loadingNewAthlete={this.props.loadingNewAthlete}
           />
+                      <div className={styles.suggestionPanel}>
+              <Similar
+                similar_athletes={this.props.similar_athletes}
+                setAthlete={this.props.setAthlete}
+                loadingNewAthlete={this.props.loadingNewAthlete}
+              ></Similar>
+            </div>
         </div>
       );
     }

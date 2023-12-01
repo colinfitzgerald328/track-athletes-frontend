@@ -170,6 +170,7 @@ export default class MainComponent extends React.Component {
             setAthleteFromTopCompetitors={this.setAthleteFromTopCompetitors.bind(
               this,
             )}
+            similar_athletes={this.state.similar_athletes}
           />
         </div>
       );
