@@ -1,4 +1,3 @@
-import { GeistSans, GeistMono } from "geist/font";
 import Head from "next/head";
 import "./globals.css";
 
