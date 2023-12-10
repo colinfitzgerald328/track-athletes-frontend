@@ -137,10 +137,10 @@ export default function SearchBar(props) {
         </div>
       ) : loading ? (
         <div ref={searchResultsRef} className={styles.searchResults}>
-          <Skeleton height={100} />
-          <Skeleton height={100} />
-          <Skeleton height={100} />
-          <Skeleton height={100} />
+          <Skeleton animation="wave" height={100} />
+          <Skeleton animation="wave" height={100} />
+          <Skeleton animation="wave" height={100} />
+          <Skeleton animation="wave" height={100} />
         </div>
       ) : (
         ""

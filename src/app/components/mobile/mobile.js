@@ -106,9 +106,9 @@ export default class MobileVersion extends React.Component {
                   <div className={styles.competitorsWithSlightlyLessMargin}>
                     {this.props.loadingNewAthlete ? (
                       <div>
-                        <Skeleton />
-                        <Skeleton />
-                        <Skeleton />
+                        <Skeleton animation="wave"/>
+                        <Skeleton animation="wave"/>
+                        <Skeleton animation="wave"/>
                       </div>
                     ) : (
                       this.props.athlete.top_competitors_with_reference.map(
@@ -141,9 +141,9 @@ export default class MobileVersion extends React.Component {
                   <div className={styles.competitors}>
                     {this.props.loadingNewAthlete ? (
                       <div>
-                        <Skeleton />
-                        <Skeleton />
-                        <Skeleton />
+                        <Skeleton animation="wave"/>
+                        <Skeleton animation="wave"/>
+                        <Skeleton animation="wave"/>
                       </div>
                     ) : (
                       this.props.athlete_pbs.map((data, index) =>
@@ -164,9 +164,9 @@ export default class MobileVersion extends React.Component {
                   <div className={styles.competitors}>
                     {this.props.loadingNewAthlete ? (
                       <div>
-                        <Skeleton />
-                        <Skeleton />
-                        <Skeleton />
+                          <Skeleton animation="wave"/>
+                          <Skeleton animation="wave"/>
+                          <Skeleton animation="wave"/>
                       </div>
                     ) : (
                       firstThreeAccomplishments.map((accolade, index) => (

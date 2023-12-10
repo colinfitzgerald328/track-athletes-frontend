@@ -23,6 +23,7 @@ export default function Similar(props) {
             width={150}
             height={40}
             style={{ marginLeft: "10px" }}
+            animation="wave"
           />
         ) : (
           <div className={styles.similarName}>{athlete.full_name}</div>
@@ -33,6 +34,7 @@ export default function Similar(props) {
             width={150}
             height={20}
             style={{ marginLeft: "10px", marginBottom: "5px" }}
+            animation="wave"
           />
         ) : (
           <div className={styles.disciplines}>{athlete.disciplines}</div>

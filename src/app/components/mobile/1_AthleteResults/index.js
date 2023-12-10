@@ -81,10 +81,10 @@ export default function AthleteResults(props) {
       <div className={styles.resultHolder}>
         {props.loadingNewAthlete ? (
           <div>
-            <Skeleton variant="text" height={80} />
-            <Skeleton variant="text" height={80} />
-            <Skeleton variant="text" height={80} />
-            <Skeleton variant="text" height={80} />
+            <Skeleton animation="wave" variant="text" height={80} />
+            <Skeleton animation="wave" variant="text" height={80} />
+            <Skeleton animation="wave" variant="text" height={80} />
+            <Skeleton animation="wave" variant="text" height={80} />
           </div>
         ) : (
           resultsMap
