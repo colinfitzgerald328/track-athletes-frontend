@@ -1,6 +1,6 @@
 ## Athletics Hub - V1 
 
-Athletics hub V1 has been designed and will go into development starting Dec. 5, 2023. The goal is to launch V1 by the end of this week! Here's a simple sketch of the plan for Athletics Hub V1. The goal with this version was to decrease the amount of color and organizd the collected data in a more effective manner. 
+Athletics hub V1 has been designed and the beta is now available at the following link! https://athletics-hub-v1.vercel.app. As it is still in beta, there may be design flaws or bugs that you run into. If you do, feel free to shoot me an email: colinfitzgerald328@gmail.com :) 
 
 <img width="1171" alt="Screenshot 2023-12-04 at 6 04 03 PM" src="https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/b253dee8-b0c5-427b-bd9d-be2c8dfdae6a">
 
