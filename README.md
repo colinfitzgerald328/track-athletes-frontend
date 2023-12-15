@@ -11,7 +11,8 @@ With head to head, you are able to add athletes to a display where you can compa
 
 With **Collections**, you can now create groups of your favorite athletes. The goal of this feature is for you to be able to organize the athletes you follow throughout the season for quick access and to stay up to date. 
 
-![Screenshot 2023-12-14 at 7 18 30 PM](https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/b01c5937-25d4-4153-bc65-d4ac66e5f7a0)
+<img width="1596" alt="Screenshot 2023-12-15 at 8 57 23 AM" src="https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/7ba0cd08-3d25-405b-8765-c6281b44de1f">
+
 
 
 <img width="1171" alt="Screenshot 2023-12-04 at 6 04 03 PM" src="https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/b253dee8-b0c5-427b-bd9d-be2c8dfdae6a">
