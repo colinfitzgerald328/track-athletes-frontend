@@ -2,6 +2,18 @@
 
 Athletics hub V1 has been designed and the beta is now available at the following link! https://athletics-hub-v1.vercel.app. As it is still in beta, there may be design flaws or bugs that you run into. If you do, feel free to shoot me an email: colinfitzgerald328@gmail.com :) 
 
+With V1 we introduce *2* new experimental features: **Head to Head** and **Collections**
+
+With head to head, you are able to add athletes to a display where you can compare their personal bests side by side. It is likely that we will build an analytical and informative feature on top of this that can predict who would win/ some sort of virtual competitions. 
+
+![Screenshot 2023-12-14 at 7 14 12 PM](https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/3fd1b9a6-932f-412b-b87f-6c05233a0f00)
+
+
+With **Collections**, you can now create groups of your favorite athletes. The goal of this feature is for you to be able to organize the athletes you follow throughout the season for quick access and to stay up to date. 
+
+![Screenshot 2023-12-14 at 7 18 30 PM](https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/b01c5937-25d4-4153-bc65-d4ac66e5f7a0)
+
+
 <img width="1171" alt="Screenshot 2023-12-04 at 6 04 03 PM" src="https://github.com/colinfitzgerald328/athletics-hub/assets/64982557/b253dee8-b0c5-427b-bd9d-be2c8dfdae6a">
 
 
