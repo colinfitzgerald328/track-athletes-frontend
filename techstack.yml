@@ -2,7 +2,7 @@ repo_name: colinfitzgerald328/athletics-hub
 report_id: e65829323ef81cf7e299753f6cb82ff6
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T08:20:02+00:00'
+timestamp: '2024-02-29T19:07:38+00:00'
 requested_by: colinfitzgerald328
 provider: github
 branch: main
@@ -42,7 +42,7 @@ tools:
   last_updated_by: Colin
   last_updated_on: 2023-11-03 08:38:56.000000000 Z
 - name: Next.js
-  description: 'A small framework for server-rendered universal JavaScript apps '
+  description: A small framework for server-rendered universal JavaScript apps
   website_url: https://nextjs.org/
   version: 14.0.0
   open_source: true
